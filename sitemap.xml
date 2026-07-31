@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+	<url>
+		<loc>https://disccsz.github.io/stranitsa_ekosistemy_interkrus/index.html</loc>
+		<priority>1.0</priority>
+	</url>
+	<url>
+		<loc>https://disccsz.github.io/stranitsa_ekosistemy_interkrus/architecture/index.html</loc>
+		<priority>0.8</priority>
+	</url>
+	<url>
+		<loc>https://disccsz.github.io/stranitsa_ekosistemy_interkrus/api/index.html</loc>
+		<priority>0.8</priority>
+	</url>
+	<url>
+		<loc>https://disccsz.github.io/stranitsa_ekosistemy_interkrus/configuration/index.html</loc>
+		<priority>0.6</priority>
+	</url>
+	<url>
+		<loc>https://disccsz.github.io/stranitsa_ekosistemy_interkrus/deployment/index.html</loc>
+		<priority>0.7</priority>
+	</url>
+	<url>
+		<loc>https://disccsz.github.io/stranitsa_ekosistemy_interkrus/monitoring/index.html</loc>
+		<priority>0.6</priority>
+	</url>
+</urlset>

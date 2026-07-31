@@ -13,11 +13,6 @@
 	box-sizing: border-box;
 }
 
-:focus,
-:active {
-	outline: none;
-}
-
 html,
 body {
 	height: 100%;
@@ -51,11 +46,6 @@ button {
 button::-moz-focus-inner {
 	padding: 0;
 	border: 0;
-}
-
-a:focus,
-a:active {
-	outline: none;
 }
 
 a,

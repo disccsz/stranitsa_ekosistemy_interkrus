@@ -1,34 +1,33 @@
 <!DOCTYPE html>
-<html lang="ru" style="scroll-behavior:smooth;">
+<html lang="ru">
 
 <head>
 	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="icon" href="favicon.png" />
+	<link rel="icon" type="image/png" href="favicon.png" />
 
-	<link rel="stylesheet" href="landing_pages/static/css/fonts.css@v=100.css">
-	<link rel="stylesheet" href="landing_pages/static/css/reset.css@v=100.css">
-	<link rel="stylesheet" href="landing_pages/static/css/style.css@v=100.css">
+	<link rel="stylesheet" href="landing_pages/static/css/fonts.css?v=1">
+	<link rel="stylesheet" href="landing_pages/static/css/reset.css?v=1">
+	<link rel="stylesheet" href="landing_pages/static/css/style.css?v=1">
 
-	<script src="landing_pages/static/libs/gsap/gsap.js"></script>
-	<script src="landing_pages/static/libs/gsap/gsap-scroll-trigger.js"></script>
-	<script src="landing_pages/static/js/script.js"></script>
+	<script defer src="landing_pages/static/libs/gsap/gsap.min.js"></script>
+	<script defer src="landing_pages/static/libs/gsap/ScrollTrigger.min.js"></script>
+	<script defer src="landing_pages/static/js/script.js"></script>
 
 	<title>Умная галерея</title>
 
+	<link rel="canonical" href="index.html" />
+
 	<meta property="og:site_name" content="Умная галерея" />
+	<meta property="og:title" content="Умная галерея — AI-анализ фотографий" />
+	<meta property="og:url" content="index.html" />
+	<meta property="og:image" content="landing_pages/static/img/video/bg.png" />
+	<meta property="og:type" content="website" />
 	<meta name="description"
 		content="Асинхронная загрузка и AI-анализ фотографий. Детекция лиц, оценка размытия и качества, поиск дубликатов." />
 	<meta property="og:description"
 		content="Асинхронная загрузка и AI-анализ фотографий. Детекция лиц, оценка размытия и качества, поиск дубликатов." />
-
-	
-
 </head>
-
-
-
 
 <body>
 	<div class="body-wrapper">
@@ -40,9 +39,9 @@
 							<span class="text-24 fw-500">Умная галерея</span>
 						</div>
 
-						<a href="https://vk.ru/app54685020?ref=webpage" class="header__btn text-20 fw-500" style="background:#0077FF;color:#fff;padding:8px 20px;border-radius:20px;text-decoration:none;">Открыть в VK</a>
+						<a href="https://vk.ru/app54685020?ref=webpage" class="header__btn btn btn_vk text-20 fw-500">Открыть в VK</a>
 
-						<div class="header__menu-btn">
+						<button type="button" class="header__menu-btn" aria-label="Меню" aria-expanded="false" aria-controls="nav">
 							<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
 								fill="none">
 								<path d="M3 6H21" stroke="white" stroke-width="2" stroke-linecap="round" />
@@ -56,25 +55,25 @@
 								<path d="M5.63672 18.364L18.3646 5.63609" stroke="white" stroke-width="2"
 									stroke-linecap="round" />
 							</svg>
-						</div>
+						</button>
 					</div>
 
-					<nav class="header__nav nav">
+					<nav class="header__nav nav" id="nav">
 						<ul class="nav__list fw-500">
 							<li class="nav__item">
 								<a href="index.html" class="nav__link nav__link_lvl1">Главная</a>
 							</li>
 							<li class="nav__item">
-								<a href="index.html" class="nav__link nav__link_lvl1">Для разработчиков</a>
+								<a href="architecture/index.html" class="nav__link nav__link_lvl1">Архитектура</a>
 							</li>
 							<li class="nav__item">
-								<a href="index.html" class="nav__link nav__link_lvl1">Помощь</a>
+								<a href="api/index.html" class="nav__link nav__link_lvl1">API</a>
 							</li>
 							<li class="nav__item">
-								<a href="index.html" class="nav__link nav__link_lvl1">Скачать для iOS</a>
+								<a href="deployment/index.html" class="nav__link nav__link_lvl1">Развёртывание</a>
 							</li>
 							<li class="nav__item">
-								<a href="index.html" class="nav__link nav__link_lvl1">Cкачать для всех устройств</a>
+								<a href="index.html#vacancy" class="nav__link nav__link_lvl1">Документация</a>
 							</li>
 						</ul>
 						<div class="nav__label">Умная галерея</div>
@@ -105,11 +104,11 @@
 					</div>
 					<div class="container">
 						<div class="vacancy-entrance__wrapper">
-							<div class="vacancy-entrance__title text-56 fw-500 vacancy-entrance__anim">
+							<h1 class="vacancy-entrance__title text-56 fw-500 vacancy-entrance__anim">
 								Загрузка фото. <br>
 								<span>AI-анализ. <br></span>
 								Детекция лиц.
-							</div>
+							</h1>
 							<div class="vacancy-entrance__desc text-28 gray-text vacancy-entrance__anim">
 								Асинхронный пайплайн: PostgreSQL, MinIO, Kafka, gRPC-анализатор.
 							</div>
@@ -136,7 +135,7 @@
 								</a>
 							</div>
 							<div class="article-block__img">
-								<img src="landing_pages/static/img/video/bg.png" alt="img">
+								<img src="landing_pages/static/img/video/bg.png" alt="Интерфейс умной галереи" width="1401" height="1389" loading="lazy" decoding="async">
 							</div>
 						</div>
 					</div>
@@ -146,14 +145,14 @@
 				<section class="section completed" id="completed">
 					<div class="container">
 						<div class="completed__wrapper">
-							<div class="completed__title text-56 fw-500" id="project">
+							<h2 class="completed__title text-56 fw-500">
 								Стек
-							</div>
+							</h2>
 							<div class="completed__subtitle text-28 gray-text">
 								Асинхронный пайплайн на Python, FastAPI, Kafka и gRPC.
 							</div>
 							<div class="completed__bg">
-								<img src="landing_pages/static/img/completed/bg.png" alt="img">
+								<img src="landing_pages/static/img/completed/bg.png" alt="" width="971" height="926" loading="lazy" decoding="async">
 							</div>
 							<div class="completed__list text-24">
 								<div class="completed__item">
@@ -182,7 +181,7 @@
 								<div class="completed__item">
 									<div class="completed__text">Docker Compose, Kubernetes</div>
 								</div>
-								</div>
+							</div>
 						</div>
 					</div>
 				</section>
@@ -192,10 +191,10 @@
 					<div class="container">
 						<div class="vacancy__wrapper">
 							<div class="vacancy__bg">
-								<img src="landing_pages/static/img/video/bg.png" alt="img">
+								<img src="landing_pages/static/img/video/bg.png" alt="" width="1401" height="1389" loading="lazy" decoding="async">
 							</div>
 							<div class="vacancy__heading">
-								<div class="vacancy__title text-56 fw-500">Документация</div>
+								<h2 class="vacancy__title text-56 fw-500">Документация</h2>
 								<div class="vacancy__desc text-18 gray-text">
 									Архитектура, API, развёртывание, переменные окружения, метрики.
 								</div>
@@ -302,19 +301,19 @@
 					</div>
 				</section>
 			</div>
-			<section class="section iframe-block" id="app-preview" style="padding: 80px 0;">
+			<section class="section iframe-block" id="app-preview">
 				<div class="container">
-					<div class="section__title text-56 fw-500" style="margin-bottom:24px;">Попробуйте сами</div>
-					<div class="section__subtitle text-28 gray-text" style="margin-bottom:40px;">Загрузите фото и посмотрите, как работает детекция лиц, оценка качества и поиск дубликатов.</div>
-					<iframe src="https://prod-app54685020-bc06c74baa14.pages-ac.vk-apps.com/index.html" style="width:100%;height:700px;border:none;border-radius:16px;"></iframe>
-					<div class="section" style="margin-top:40px;padding:48px;border-radius:24px;background:var(--black-2);text-align:center;">
-						<div class="text-36 fw-500" style="margin-bottom:16px;">Полный функционал — в VK</div>
-						<div class="text-18 gray-text" style="margin-bottom:12px;">Откройте в VK Mini Apps и получите:</div>
-						<ul class="text-18 gray-text" style="list-style:none;padding:0;margin:0 0 32px;display:flex;justify-content:center;gap:24px;flex-wrap:wrap;">
-							<li style="color:#fff;">✓ Удобный интерфейс</li>
-							<li style="color:#fff;">✓ Личная галерея</li>
+					<h2 class="section__title text-56 fw-500">Попробуйте сами</h2>
+					<div class="section__subtitle text-28 gray-text">Загрузите фото и посмотрите, как работает детекция лиц, оценка качества и поиск дубликатов.</div>
+					<iframe src="https://prod-app54685020-bc06c74baa14.pages-ac.vk-apps.com/index.html" class="app-preview__frame" title="Демо VK Mini App «Умная галерея»" loading="lazy"></iframe>
+					<div class="vk-cta">
+						<div class="vk-cta__title text-36 fw-500">Полный функционал — в VK</div>
+						<div class="vk-cta__desc text-18 gray-text">Откройте в VK Mini Apps и получите:</div>
+						<ul class="vk-cta__list text-18 gray-text">
+							<li>✓ Удобный интерфейс</li>
+							<li>✓ Личная галерея</li>
 						</ul>
-						<a href="https://vk.ru/app54685020?ref=webpage" class="btn btn_gradient-bg text-24 fw-500" style="display:inline-block;padding:16px 48px;text-decoration:none;">Открыть в VK</a>
+						<a href="https://vk.ru/app54685020?ref=webpage" class="btn btn_gradient-bg text-24 fw-500 vk-cta__btn">Открыть в VK</a>
 					</div>
 				</div>
 			</section>

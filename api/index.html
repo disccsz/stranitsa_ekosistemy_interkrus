@@ -3,22 +3,26 @@
 
 <head>
 	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" type="image/png" href="../favicon.png" />
 
-	<link rel="icon" href="../favicon.png" />
+	<link rel="stylesheet" href="../landing_pages/static/css/fonts.css?v=1">
+	<link rel="stylesheet" href="../landing_pages/static/css/reset.css?v=1">
+	<link rel="stylesheet" href="../landing_pages/static/css/style.css?v=1">
 
-	<link rel="stylesheet" href="../landing_pages/static/css/fonts.css@v=100.css">
-	<link rel="stylesheet" href="../landing_pages/static/css/reset.css@v=100.css">
-	<link rel="stylesheet" href="../landing_pages/static/css/style.css@v=100.css">
-
-	<script src="../landing_pages/static/libs/gsap/gsap.js"></script>
-	<script src="../landing_pages/static/libs/gsap/gsap-scroll-trigger.js"></script>
-	<script src="../landing_pages/static/js/script.js"></script>
+	<script defer src="../landing_pages/static/libs/gsap/gsap.min.js"></script>
+	<script defer src="../landing_pages/static/libs/gsap/ScrollTrigger.min.js"></script>
+	<script defer src="../landing_pages/static/js/script.js"></script>
 
 	<title>API — Умная галерея</title>
 
+	<link rel="canonical" href="index.html" />
+
 	<meta property="og:site_name" content="Умная галерея" />
+	<meta property="og:title" content="API — Умная галерея" />
+	<meta property="og:url" content="index.html" />
+	<meta property="og:image" content="../landing_pages/static/img/video/bg.png" />
+	<meta property="og:type" content="website" />
 	<meta name="description" content="API эндпоинты: аутентификация VK, загрузка фото, список фото, детали, дубликаты, health." />
 	<meta property="og:description" content="API эндпоинты: аутентификация VK, загрузка фото, список фото, детали, дубликаты, health." />
 </head>
@@ -32,8 +36,8 @@
 						<a href="../index.html#vacancy" class="header__logo">
 							<span class="text-24 fw-500">Умная галерея</span>
 						</a>
-						<a href="../index.html" class="header__btn text-20 gradient-text">Изучить</a>
-						<div class="header__menu-btn">
+						<a href="../index.html" class="header__btn btn btn_gradient-bg text-20">Изучить</a>
+						<button type="button" class="header__menu-btn" aria-label="Меню" aria-expanded="false" aria-controls="nav">
 							<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
 								<path d="M3 6H21" stroke="white" stroke-width="2" stroke-linecap="round" />
 								<path d="M3 12H21" stroke="white" stroke-width="2" stroke-linecap="round" />
@@ -43,10 +47,10 @@
 								<path d="M5.63672 5.63599L18.3646 18.3639" stroke="white" stroke-width="2" stroke-linecap="round" />
 								<path d="M5.63672 18.364L18.3646 5.63609" stroke="white" stroke-width="2" stroke-linecap="round" />
 							</svg>
-						</div>
+						</button>
 					</div>
 
-					<nav class="header__nav nav">
+					<nav class="header__nav nav" id="nav">
 						<ul class="nav__list fw-500">
 							<li class="nav__item">
 								<a href="../index.html" class="nav__link nav__link_lvl1">Главная</a>
@@ -55,7 +59,7 @@
 								<a href="../index.html#vacancy" class="nav__link nav__link_lvl1">Документация</a>
 							</li>
 						</ul>
-						<div class="nav__label">Умная галерея © 2026</div>
+						<div class="nav__label">Умная галерея</div>
 					</nav>
 				</div>
 			</div>
@@ -63,14 +67,14 @@
 		<main class="main">
 			<section class="section vacancy-page">
 				<div class="vacancy-page__bg">
-					<img src="../landing_pages/static/img/vacancy-page/bg.png" alt="img">
+					<img src="../landing_pages/static/img/vacancy-page/bg.png" alt="" width="1096" height="1300" decoding="async">
 				</div>
 				<div class="container">
 					<div class="vacancy-page__wrapper">
 						<div class="vacancy-page__top">
-							<div class="vacancy-page__title text-56 fw-500">
+							<h1 class="vacancy-page__title text-56 fw-500">
 								API эндпоинты
-							</div>
+							</h1>
 						</div>
 						<div class="vacancy-page__content content text-18">
 							<p>Интерактивная документация: /redoc (ReDoc), /docs (Swagger UI), /openapi.json.</p>

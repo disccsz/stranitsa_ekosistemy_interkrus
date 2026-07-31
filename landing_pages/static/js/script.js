@@ -2,50 +2,54 @@ document.addEventListener('DOMContentLoaded', function () {
 	// scroll to preview
 	document.querySelector('#scroll-to-preview')?.addEventListener('click', (e) => {
 		e.preventDefault();
-		document.querySelector('#app-preview')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+		const behavior = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth';
+		document.querySelector('#app-preview')?.scrollIntoView({ behavior, block: 'start' });
 	});
 
 	// menu
+	function toggleMenu(open) {
+		document.body.classList.toggle('header-open', open);
+		document.querySelectorAll('.header__menu-btn').forEach(btn => {
+			btn.setAttribute('aria-expanded', String(open));
+		});
+	}
+
 	document.querySelectorAll('.header__menu-btn').forEach(btn => {
-		btn.addEventListener('click', (e) => {
-			document.querySelector('body').classList.toggle('header-open')
-		})
-	})
+		btn.addEventListener('click', () => {
+			toggleMenu(!document.body.classList.contains('header-open'));
+		});
+	});
 	document.querySelectorAll('.nav__link').forEach(link => {
-		link.addEventListener('click', (e) => {
-			document.querySelector('body').classList.remove('header-open')
-		})
-	})
+		link.addEventListener('click', () => toggleMenu(false));
+	});
+
+	// если GSAP/ScrollTrigger не загрузились — контент остаётся видимым, анимаций нет
+	if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
 
 	// sections anim
 	let sectionsArr = document.querySelectorAll('.section-anim')
 	sectionsArr.forEach((section, index) => {
-		if (index + 1 < sectionsArr.length) {
-			let blockHeight = sectionsArr[index + 1].offsetHeight
-			let windowHeight = window.innerHeight
-			let resultHeight = blockHeight < windowHeight ? blockHeight : windowHeight
-			let overlap = Math.min(resultHeight / 4, 120)
+		if (index + 1 >= sectionsArr.length) return;
 
-			let tl = gsap.timeline({
-				scrollTrigger: {
-					trigger: section,
-					start: "bottom 100%",
-					end: "+=" + resultHeight,
-					scrub: true,
-					markers: false,
-					pin: false,
-					onLeave: (event) => {
-						ScrollTrigger.refresh()
-					}
-				}
-			});
+		let blockHeight = sectionsArr[index + 1].offsetHeight
+		let windowHeight = window.innerHeight
+		let resultHeight = blockHeight < windowHeight ? blockHeight : windowHeight
+		let overlap = Math.min(resultHeight / 4, 120)
 
-			tl.to(sectionsArr[index + 1], {
-				marginTop: -overlap,
-			});
+		let tl = gsap.timeline({
+			scrollTrigger: {
+				trigger: section,
+				start: "bottom 100%",
+				end: "+=" + resultHeight,
+				scrub: true,
+				markers: false,
+				pin: false,
+			}
+		});
 
-			sectionsArr[index + 1].setAttribute('data-total-margin', overlap)
-		}
+		tl.to(sectionsArr[index + 1], {
+			marginTop: -overlap,
+		});
 	})
 
 	// completed list items anim
