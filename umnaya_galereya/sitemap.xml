@@ -24,16 +24,4 @@
 		<loc>https://disccsz.github.io/stranitsa_ekosistemy_interkrus/monitoring/index.html</loc>
 		<priority>0.6</priority>
 	</url>
-	<url>
-		<loc>https://disccsz.github.io/stranitsa_ekosistemy_interkrus/projects/vkr-2025/index.html</loc>
-		<priority>0.6</priority>
-	</url>
-	<url>
-		<loc>https://disccsz.github.io/stranitsa_ekosistemy_interkrus/projects/bc-69077/index.html</loc>
-		<priority>0.6</priority>
-	</url>
-	<url>
-		<loc>https://disccsz.github.io/stranitsa_ekosistemy_interkrus/projects/tbank-lfstl/index.html</loc>
-		<priority>0.6</priority>
-	</url>
 </urlset>

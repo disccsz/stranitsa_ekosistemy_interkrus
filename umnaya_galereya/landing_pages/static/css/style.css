@@ -424,18 +424,6 @@ body {
 	backdrop-filter: blur(7.5px);
 }
 
-.completed__item-name {
-	display: block;
-	margin-bottom: 4px;
-}
-
-.completed__item-desc {
-	display: block;
-	color: var(--gray-1);
-	font-size: 16px;
-	line-height: 140%;
-}
-
 /* ---------------------------------- vacancy entrance (hero) ---------------------------------- */
 
 .vacancy-entrance {
@@ -688,12 +676,6 @@ body {
 	padding-right: 24px;
 }
 
-.vacancy__text {
-	margin-top: 12px;
-	padding-right: 24px;
-	color: var(--gray-1);
-}
-
 .vacancy__tags {
 	position: relative;
 	-webkit-mask-image: linear-gradient(90deg, var(--link-bg) calc(100% - 50px), rgba(0, 0, 0, 0) 100%);
@@ -842,178 +824,6 @@ body {
 	color: var(--gray-1);
 }
 
-/* ---------------------------------- project pages (portfolio) ---------------------------------- */
-
-.pp-meta {
-	display: flex;
-	gap: 8px;
-	flex-wrap: wrap;
-	margin-bottom: 40px;
-}
-
-.pp-meta__tag {
-	padding: 6px 14px;
-	border-radius: 8px;
-	border: 1px solid rgba(255, 255, 255, 0.1);
-	color: var(--gray-1);
-	font-size: 14px;
-}
-
-.pp-grid {
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-	gap: 16px;
-	margin: 24px 0;
-}
-
-.pp-card {
-	padding: 24px;
-	border-radius: 24px;
-	background: var(--black-2);
-	border: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.pp-card__value {
-	font-size: 40px;
-	line-height: 110%;
-	font-weight: 500;
-	color: var(--accent);
-	margin-bottom: 12px;
-}
-
-.pp-card__title {
-	font-weight: 500;
-	margin-bottom: 8px;
-}
-
-.pp-card__text {
-	color: var(--gray-1);
-}
-
-.pp-spec {
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-	gap: 12px;
-	margin: 24px 0;
-}
-
-.pp-spec__row {
-	display: flex;
-	justify-content: space-between;
-	gap: 24px;
-	padding: 16px 24px;
-	border-radius: 16px;
-	background: var(--black-2);
-}
-
-.pp-spec__name {
-	color: var(--gray-1);
-}
-
-.pp-spec__value {
-	font-weight: 500;
-	text-align: right;
-}
-
-.pp-team {
-	display: flex;
-	flex-direction: column;
-	gap: 8px;
-	margin: 24px 0;
-}
-
-.pp-team__row {
-	display: flex;
-	justify-content: space-between;
-	gap: 24px;
-	padding: 16px 24px;
-	border-radius: 16px;
-	background: var(--black-2);
-}
-
-.pp-team__name {
-	font-weight: 500;
-}
-
-.pp-team__role {
-	color: var(--gray-1);
-	text-align: right;
-}
-
-.pp-steps {
-	counter-reset: pp-step;
-	display: flex;
-	flex-direction: column;
-	gap: 12px;
-	margin: 24px 0;
-}
-
-.pp-steps__item {
-	position: relative;
-	padding: 20px 24px 20px 72px;
-	border-radius: 16px;
-	background: var(--black-2);
-	counter-increment: pp-step;
-}
-
-.pp-steps__item::before {
-	content: counter(pp-step);
-	position: absolute;
-	top: 50%;
-	left: 24px;
-	transform: translateY(-50%);
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	width: 32px;
-	height: 32px;
-	border-radius: 50%;
-	background: var(--btn-bg);
-	font-weight: 500;
-}
-
-.pp-steps__title {
-	font-weight: 500;
-	margin-bottom: 4px;
-}
-
-.pp-steps__text {
-	color: var(--gray-1);
-}
-
-.pp-quote {
-	margin: 24px 0;
-	padding: 24px;
-	border-radius: 24px;
-	background: var(--black-2);
-	border-left: 4px solid var(--accent);
-}
-
-.pp-quote p:not(:last-child) {
-	margin-bottom: 16px;
-}
-
-.vacancy__link_disabled {
-	cursor: default;
-}
-
-.vacancy__link_disabled:hover {
-	--link-bg: var(--black-2);
-}
-
-@media screen and (max-width: 570px) {
-	.pp-spec__row,
-	.pp-team__row {
-		flex-direction: column;
-		gap: 4px;
-	}
-
-	.pp-spec__value,
-	.pp-team__role {
-		text-align: left;
-	}
-}
-
 /* ---------------------------------- app preview ---------------------------------- */
 
 .iframe-block {
@@ -1070,42 +880,6 @@ body {
 .vk-cta__btn {
 	display: inline-block;
 	padding: 16px 48px;
-	text-decoration: none;
-}
-
-.contacts__qrs {
-	display: flex;
-	justify-content: center;
-	align-items: flex-start;
-	gap: 40px;
-	flex-wrap: wrap;
-	margin-bottom: 40px;
-}
-
-.contacts__qr {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	gap: 12px;
-}
-
-.contacts__qr img {
-	width: 168px;
-	height: 168px;
-	border-radius: 16px;
-	display: block;
-}
-
-.contacts__btns {
-	display: flex;
-	justify-content: center;
-	gap: 16px;
-	flex-wrap: wrap;
-}
-
-.contacts__btn {
-	display: inline-flex;
-	padding: 16px 32px;
 	text-decoration: none;
 }
 

@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	document.querySelector('#scroll-to-preview')?.addEventListener('click', (e) => {
 		e.preventDefault();
 		const behavior = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth';
-		document.querySelector('#about')?.scrollIntoView({ behavior, block: 'start' });
+		document.querySelector('#app-preview')?.scrollIntoView({ behavior, block: 'start' });
 	});
 
 	// menu

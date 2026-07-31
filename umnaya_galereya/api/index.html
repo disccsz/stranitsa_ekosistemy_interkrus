@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" type="image/png" href="../favicon.png" />
+
+	<link rel="stylesheet" href="../landing_pages/static/css/fonts.css?v=1">
+	<link rel="stylesheet" href="../landing_pages/static/css/reset.css?v=1">
+	<link rel="stylesheet" href="../landing_pages/static/css/style.css?v=1">
+
+	<script defer src="../landing_pages/static/libs/gsap/gsap.min.js"></script>
+	<script defer src="../landing_pages/static/libs/gsap/ScrollTrigger.min.js"></script>
+	<script defer src="../landing_pages/static/js/script.js"></script>
+
+	<title>API — Умная галерея</title>
+
+	<link rel="canonical" href="index.html" />
+
+	<meta property="og:site_name" content="Умная галерея" />
+	<meta property="og:title" content="API — Умная галерея" />
+	<meta property="og:url" content="index.html" />
+	<meta property="og:image" content="../landing_pages/static/img/video/bg.png" />
+	<meta property="og:type" content="website" />
+	<meta name="description" content="API эндпоинты: аутентификация VK, загрузка фото, список фото, детали, дубликаты, health." />
+	<meta property="og:description" content="API эндпоинты: аутентификация VK, загрузка фото, список фото, детали, дубликаты, health." />
+</head>
+
+<body>
+	<div class="body-wrapper">
+		<header class="header">
+			<div class="container">
+				<div class="header__wrapper">
+					<div class="header__top">
+						<a href="../index.html#vacancy" class="header__logo">
+							<span class="text-24 fw-500">Умная галерея</span>
+						</a>
+						<a href="../index.html" class="header__btn btn btn_gradient-bg text-20">Изучить</a>
+						<button type="button" class="header__menu-btn" aria-label="Меню" aria-expanded="false" aria-controls="nav">
+							<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+								<path d="M3 6H21" stroke="white" stroke-width="2" stroke-linecap="round" />
+								<path d="M3 12H21" stroke="white" stroke-width="2" stroke-linecap="round" />
+								<path d="M3 18H21" stroke="white" stroke-width="2" stroke-linecap="round" />
+							</svg>
+							<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+								<path d="M5.63672 5.63599L18.3646 18.3639" stroke="white" stroke-width="2" stroke-linecap="round" />
+								<path d="M5.63672 18.364L18.3646 5.63609" stroke="white" stroke-width="2" stroke-linecap="round" />
+							</svg>
+						</button>
+					</div>
+
+					<nav class="header__nav nav" id="nav">
+						<ul class="nav__list fw-500">
+							<li class="nav__item">
+								<a href="../index.html" class="nav__link nav__link_lvl1">Главная</a>
+							</li>
+							<li class="nav__item">
+								<a href="../index.html#vacancy" class="nav__link nav__link_lvl1">Документация</a>
+							</li>
+						</ul>
+						<div class="nav__label">Умная галерея</div>
+					</nav>
+				</div>
+			</div>
+		</header>
+		<main class="main">
+			<section class="section vacancy-page">
+				<div class="vacancy-page__bg">
+					<img src="../landing_pages/static/img/vacancy-page/bg.png" alt="" width="1096" height="1300" decoding="async">
+				</div>
+				<div class="container">
+					<div class="vacancy-page__wrapper">
+						<div class="vacancy-page__top">
+							<h1 class="vacancy-page__title text-56 fw-500">
+								API эндпоинты
+							</h1>
+						</div>
+						<div class="vacancy-page__content content text-18">
+							<p>Интерактивная документация: /redoc (ReDoc), /docs (Swagger UI), /openapi.json.</p>
+
+							<h2>Аутентификация</h2>
+							<p>Сервис использует схему VK Mini Apps. Клиент отправляет параметры запуска VK и подпись (sign). Сервер верифицирует подпись с помощью VK_SECRET_KEY и выдаёт JWT.</p>
+<pre>
+Authorization: Bearer &lt;jwt_token&gt;
+</pre>
+
+							<h2>POST /api/v1/photo/auth</h2>
+							<p>Аутентификация VK. Проверка подписи HMAC-SHA256. Возвращает JWT.</p>
+<pre>
+Request:
+{
+  "vk_user_id": "123456789",
+  "vk_app_id": "987654",
+  "sign": "base64url_hmac_signature",
+  "vk_language": "ru",
+  "vk_platform": "desktop_web"
+}
+
+Response 200:
+{
+  "auth_token": "eyJhbGciOiJIUzI1NiIs..."
+}
+</pre>
+
+							<h2>POST /api/v1/photos/</h2>
+							<p>Загрузить фото (multipart/form-data, JPEG/PNG, ≤3MB).</p>
+<pre>
+Response 202:
+{
+  "photo_id": "p_a1b2c3d4e5f6",
+  "status": "pending",
+  "message": "Фото приняты в асинхронную обработку"
+}
+</pre>
+
+							<h2>GET /api/v1/photos/</h2>
+							<p>Список фото (публичные — если без токена, свои — если с токеном).</p>
+
+							<h2>GET /api/v1/photos/{id}</h2>
+							<p>Детали фото с результатами анализа (faces_count, blur_score, quality_metric, и т.д.).</p>
+
+							<h2>GET /api/v1/photos/{id}/content</h2>
+							<p>Presigned URL для доступа к оригиналу и превью.</p>
+
+							<h2>GET /api/v1/duplicate-groups/</h2>
+							<p>Список групп дубликатов.</p>
+
+							<h2>GET /api/v1/duplicate-groups/{id}</h2>
+							<p>Детали группы с лучшим фото (по quality_metric).</p>
+
+							<h2>GET /healthz</h2>
+<pre>{"status": "ok"}</pre>
+
+							<h2>GET /readyz</h2>
+							<p>Проверяет PostgreSQL и MinIO.</p>
+<pre>
+{"status": "ok", "checks": {"database": "ok", "storage": "ok"}}
+</pre>
+
+							<h2>Статусы фото</h2>
+<pre>
+uploading  — файл загружается
+pending    — ожидает обработки
+processing — обрабатывается worker-ом
+done       — анализ завершён
+failed     — анализ не удался
+</pre>
+
+							<h2>Формат ошибок</h2>
+<pre>
+{
+  "error": {
+    "code": "PHOTO_NOT_FOUND",
+    "message": "Photo 'p_abc123' not found"
+  },
+  "request_id": "a1b2c3d4e5f6"
+}
+</pre>
+
+							<p>Коды: VALIDATION_ERROR (400), ACCESS_DENIED (403), PHOTO_NOT_FOUND (404), FILE_TOO_LARGE (413), INVALID_FILE_TYPE (415), DATABASE_ERROR (503).</p>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+		<footer class="footer-old">
+			<div class="container">
+				<div class="footer-old__wrapper">
+					<div class="footer-old__copy">Умная галерея © 2026</div>
+				</div>
+			</div>
+		</footer>
+	</div>
+</body>
+</html>

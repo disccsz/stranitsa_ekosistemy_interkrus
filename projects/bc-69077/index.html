@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" type="image/svg+xml" href="../../favicon.svg" />
+	<link rel="icon" type="image/png" href="../../favicon.png" />
+	<link rel="apple-touch-icon" href="../../apple-touch-icon.png" />
+
+	<link rel="stylesheet" href="../../landing_pages/static/css/fonts.css?v=1">
+	<link rel="stylesheet" href="../../landing_pages/static/css/reset.css?v=1">
+	<link rel="stylesheet" href="../../landing_pages/static/css/style.css?v=2">
+
+	<script defer src="../../landing_pages/static/libs/gsap/gsap.min.js"></script>
+	<script defer src="../../landing_pages/static/libs/gsap/ScrollTrigger.min.js"></script>
+	<script defer src="../../landing_pages/static/js/script.js"></script>
+
+	<title>BC-69077 — роботизированный комплекс мониторинга излучения | Артём Толстихин</title>
+
+	<link rel="canonical" href="index.html" />
+
+	<meta property="og:site_name" content="Артём Толстихин" />
+	<meta property="og:title" content="BC-69077 — роботизированный комплекс для мониторинга излучения" />
+	<meta property="og:url" content="index.html" />
+	<meta property="og:image" content="../../favicon.png" />
+	<meta property="og:type" content="website" />
+	<meta name="description"
+		content="Мобильный роботизированный комплекс для мониторинга уровня ионизирующего излучения: автономность, проходимость, передача данных в реальном времени." />
+	<meta property="og:description"
+		content="Мобильный роботизированный комплекс для мониторинга уровня ионизирующего излучения: автономность, проходимость, передача данных в реальном времени." />
+</head>
+
+<body>
+	<div class="body-wrapper">
+		<header class="header">
+			<div class="container">
+				<div class="header__wrapper">
+					<div class="header__top">
+						<a href="../../index.html" class="header__logo">
+							<span class="text-24 fw-500">Артём Толстихин</span>
+						</a>
+						<a href="../../index.html" class="header__btn btn btn_gradient-bg text-20">На главную</a>
+						<button type="button" class="header__menu-btn" aria-label="Меню" aria-expanded="false" aria-controls="nav">
+							<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+								<path d="M3 6H21" stroke="white" stroke-width="2" stroke-linecap="round" />
+								<path d="M3 12H21" stroke="white" stroke-width="2" stroke-linecap="round" />
+								<path d="M3 18H21" stroke="white" stroke-width="2" stroke-linecap="round" />
+							</svg>
+							<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+								<path d="M5.63672 5.63599L18.3646 18.3639" stroke="white" stroke-width="2" stroke-linecap="round" />
+								<path d="M5.63672 18.364L18.3646 5.63609" stroke="white" stroke-width="2" stroke-linecap="round" />
+							</svg>
+						</button>
+					</div>
+
+					<nav class="header__nav nav" id="nav">
+						<ul class="nav__list fw-500">
+							<li class="nav__item">
+								<a href="../../index.html" class="nav__link nav__link_lvl1">Главная</a>
+							</li>
+							<li class="nav__item">
+								<a href="../../index.html#projects" class="nav__link nav__link_lvl1">Проекты</a>
+							</li>
+						</ul>
+						<div class="nav__label">Артём Толстихин</div>
+					</nav>
+				</div>
+			</div>
+		</header>
+		<main class="main">
+			<section class="section vacancy-page">
+				<div class="vacancy-page__bg">
+					<img src="../../landing_pages/static/img/vacancy-page/bg.png" alt="" width="1096" height="1300" decoding="async">
+				</div>
+				<div class="container">
+					<div class="vacancy-page__wrapper">
+						<div class="vacancy-page__top">
+							<h1 class="vacancy-page__title text-56 fw-500">
+								Мобильный роботизированный комплекс
+							</h1>
+						</div>
+						<div class="pp-meta">
+							<div class="pp-meta__tag">BC-69077</div>
+							<div class="pp-meta__tag">Готовое решение</div>
+							<div class="pp-meta__tag">в команде</div>
+						</div>
+						<div class="vacancy-page__content content text-18">
+							<h2>Проблема</h2>
+							<p>Эксплуатация источников ионизирующего излучения связана с большим риском для здоровья человека. Для того, чтобы свести отрицательное влияние к минимуму, необходимо проводить жёсткий контроль радиационного фона и поглощённых доз.</p>
+							<div class="pp-grid">
+								<div class="pp-card">
+									<div class="pp-card__value">167</div>
+									<div class="pp-card__text">радиационных инцидентов произошло в России за 2024 год. По данным Роспотребнадзора</div>
+								</div>
+								<div class="pp-card">
+									<div class="pp-card__value">3,6 млн</div>
+									<div class="pp-card__text">человек ежегодно подвергаются воздействию повышенного излучения. По данным здравоохранения</div>
+								</div>
+								<div class="pp-card">
+									<div class="pp-card__value">×10</div>
+									<div class="pp-card__text">превышение дозы: годовая эффективная доза для работников предприятий выше, чем для обычных людей. НРБ-99/2009</div>
+								</div>
+							</div>
+							<h3>Проблемы ручного мониторинга</h3>
+							<ul>
+								<li><strong>Риск для персонала</strong> — воздействие опасных уровней радиации во время ручного мониторинга и процедур инспекции.</li>
+								<li><strong>Точность данных</strong> — непоследовательные измерения и задержки в реагировании ставят под угрозу весь персонал.</li>
+								<li><strong>Статичность</strong> — стационарные системы мониторинга не могут обеспечить комплексные данные в реальном времени по всей территории объекта.</li>
+							</ul>
+
+							<h2>Наша цель</h2>
+							<p>Создание прототипа мобильного роботизированного комплекса для мониторинга уровня ионизирующего излучения.</p>
+							<h3>Задачи</h3>
+							<ol>
+								<li>Разработка мобильной платформы</li>
+								<li>Выбор радиационно-стойких компонентов</li>
+								<li>Интеграция датчиков</li>
+								<li>Создание системы передачи данных</li>
+								<li>Разработка программного обеспечения</li>
+							</ol>
+
+							<h2>Наше решение</h2>
+							<div class="pp-grid">
+								<div class="pp-card">
+									<div class="pp-card__title">Автономность работы</div>
+									<div class="pp-card__text">Самостоятельное выполнение маршрута, время работы от батареи — от 1 часа.</div>
+								</div>
+								<div class="pp-card">
+									<div class="pp-card__title">Высокая мобильность</div>
+									<div class="pp-card__text">Проходимость: неровности до 40 мм, уклон до 30°.</div>
+								</div>
+								<div class="pp-card">
+									<div class="pp-card__title">Безопасность персонала</div>
+									<div class="pp-card__text">Оператор остаётся на безопасном расстоянии от источника излучения.</div>
+								</div>
+								<div class="pp-card">
+									<div class="pp-card__title">Передача данных в реальном времени</div>
+									<div class="pp-card__text">Wi-Fi до 40 метров, обновление измерений каждую секунду.</div>
+								</div>
+							</div>
+
+							<h2>Технические характеристики</h2>
+							<h3>Физические характеристики</h3>
+							<div class="pp-spec">
+								<div class="pp-spec__row">
+									<div class="pp-spec__name">Габариты</div>
+									<div class="pp-spec__value">380 × 380 × 270 мм</div>
+								</div>
+								<div class="pp-spec__row">
+									<div class="pp-spec__name">Масса</div>
+									<div class="pp-spec__value">6 кг</div>
+								</div>
+								<div class="pp-spec__row">
+									<div class="pp-spec__name">Рабочая температура</div>
+									<div class="pp-spec__value">от −20 °C до +50 °C</div>
+								</div>
+								<div class="pp-spec__row">
+									<div class="pp-spec__name">Проходимость</div>
+									<div class="pp-spec__value">неровности до 40 мм, уклон до 30°</div>
+								</div>
+							</div>
+							<h3>Навигация и связь</h3>
+							<div class="pp-spec">
+								<div class="pp-spec__row">
+									<div class="pp-spec__name">Обход препятствий</div>
+									<div class="pp-spec__value">алгоритм «Змейка»</div>
+								</div>
+								<div class="pp-spec__row">
+									<div class="pp-spec__name">Система навигации</div>
+									<div class="pp-spec__value">ультразвуковые дальномеры</div>
+								</div>
+								<div class="pp-spec__row">
+									<div class="pp-spec__name">Обход помещения</div>
+									<div class="pp-spec__value">автономный</div>
+								</div>
+								<div class="pp-spec__row">
+									<div class="pp-spec__name">Связь</div>
+									<div class="pp-spec__value">Wi-Fi, дальность до 40 метров</div>
+								</div>
+							</div>
+							<h3>Аппаратная платформа</h3>
+							<div class="pp-spec">
+								<div class="pp-spec__row">
+									<div class="pp-spec__name">Компьютер</div>
+									<div class="pp-spec__value">Raspberry Pi 3 Model B</div>
+								</div>
+								<div class="pp-spec__row">
+									<div class="pp-spec__name">Батарея</div>
+									<div class="pp-spec__value">Li-Ion 16 В, 8000 мАч, от 1 часа работы</div>
+								</div>
+								<div class="pp-spec__row">
+									<div class="pp-spec__name">Максимальная скорость</div>
+									<div class="pp-spec__value">2,5 км/ч</div>
+								</div>
+								<div class="pp-spec__row">
+									<div class="pp-spec__name">Степень защиты</div>
+									<div class="pp-spec__value">IP64 (от пыли и брызг воды)</div>
+								</div>
+							</div>
+							<h3>Система измерений</h3>
+							<div class="pp-spec">
+								<div class="pp-spec__row">
+									<div class="pp-spec__name">Датчик излучения</div>
+									<div class="pp-spec__value">RadSens Mini (СМБ20), жёсткое бета- и гамма-излучение</div>
+								</div>
+								<div class="pp-spec__row">
+									<div class="pp-spec__name">Диапазон измерений</div>
+									<div class="pp-spec__value">0,144–1440 мкЗв/ч</div>
+								</div>
+								<div class="pp-spec__row">
+									<div class="pp-spec__name">Точность</div>
+									<div class="pp-spec__value">±15 %</div>
+								</div>
+								<div class="pp-spec__row">
+									<div class="pp-spec__name">Частота обновления</div>
+									<div class="pp-spec__value">1 секунда</div>
+								</div>
+							</div>
+
+							<h2>Подробная спецификация</h2>
+							<p>Технические характеристики прототипа мобильного комплекса.</p>
+							<div class="pp-spec">
+								<div class="pp-spec__row">
+									<div class="pp-spec__name">Габариты</div>
+									<div class="pp-spec__value">380 × 380 × 270 мм</div>
+								</div>
+								<div class="pp-spec__row">
+									<div class="pp-spec__name">Масса</div>
+									<div class="pp-spec__value">6 кг</div>
+								</div>
+								<div class="pp-spec__row">
+									<div class="pp-spec__name">Рабочая температура</div>
+									<div class="pp-spec__value">от −20 °C до +50 °C</div>
+								</div>
+								<div class="pp-spec__row">
+									<div class="pp-spec__name">Проходимость</div>
+									<div class="pp-spec__value">неровности до 40 мм, уклон до 30°</div>
+								</div>
+								<div class="pp-spec__row">
+									<div class="pp-spec__name">Навигация</div>
+									<div class="pp-spec__value">алгоритм «Змейка», ультразвуковые дальномеры</div>
+								</div>
+								<div class="pp-spec__row">
+									<div class="pp-spec__name">Связь</div>
+									<div class="pp-spec__value">Wi-Fi, дальность до 40 метров</div>
+								</div>
+								<div class="pp-spec__row">
+									<div class="pp-spec__name">Компьютер</div>
+									<div class="pp-spec__value">Raspberry Pi 3 Model B</div>
+								</div>
+								<div class="pp-spec__row">
+									<div class="pp-spec__name">Батарея</div>
+									<div class="pp-spec__value">Li-Ion 16 В, 8000 мАч, от 1 часа работы</div>
+								</div>
+								<div class="pp-spec__row">
+									<div class="pp-spec__name">Максимальная скорость</div>
+									<div class="pp-spec__value">2,5 км/ч</div>
+								</div>
+								<div class="pp-spec__row">
+									<div class="pp-spec__name">Степень защиты</div>
+									<div class="pp-spec__value">IP64 (от пыли и брызг воды)</div>
+								</div>
+								<div class="pp-spec__row">
+									<div class="pp-spec__name">Датчик излучения</div>
+									<div class="pp-spec__value">RadSens Mini (СМБ20)</div>
+								</div>
+								<div class="pp-spec__row">
+									<div class="pp-spec__name">Диапазон измерений</div>
+									<div class="pp-spec__value">0,144–1440 мкЗв/ч</div>
+								</div>
+								<div class="pp-spec__row">
+									<div class="pp-spec__name">Точность</div>
+									<div class="pp-spec__value">±15 %</div>
+								</div>
+								<div class="pp-spec__row">
+									<div class="pp-spec__name">Частота обновления</div>
+									<div class="pp-spec__value">1 секунда</div>
+								</div>
+							</div>
+
+							<h2>Дорожная карта</h2>
+							<div class="pp-steps">
+								<div class="pp-steps__item">
+									<div class="pp-steps__title">Исследование и проектирование</div>
+									<div class="pp-steps__text">Анализ проблемы и планирование проекта.</div>
+								</div>
+								<div class="pp-steps__item">
+									<div class="pp-steps__title">Разработка прототипа</div>
+									<div class="pp-steps__text">Создание первого прототипа с базовой функциональностью.</div>
+								</div>
+								<div class="pp-steps__item">
+									<div class="pp-steps__title">Тестирование и доработка</div>
+									<div class="pp-steps__text">Тестирование и доработка всех систем.</div>
+								</div>
+								<div class="pp-steps__item">
+									<div class="pp-steps__title">Подготовка к внедрению</div>
+									<div class="pp-steps__text">Подготовка к коммерческому использованию.</div>
+								</div>
+							</div>
+
+							<h2>Команда</h2>
+							<div class="pp-team">
+								<div class="pp-team__row">
+									<div class="pp-team__name">Алексей Кузь</div>
+									<div class="pp-team__role">Инженер</div>
+								</div>
+								<div class="pp-team__row">
+									<div class="pp-team__name">Артём Толстихин</div>
+									<div class="pp-team__role">Программист-электроник, дизайнер</div>
+								</div>
+								<div class="pp-team__row">
+									<div class="pp-team__name">Екатерина Блинова</div>
+									<div class="pp-team__role">Наставник</div>
+								</div>
+								<div class="pp-team__row">
+									<div class="pp-team__name">Даниил Захезин</div>
+									<div class="pp-team__role">Наставник</div>
+								</div>
+								<div class="pp-team__row">
+									<div class="pp-team__name">Ева Довольнова</div>
+									<div class="pp-team__role">Инженер, дизайнер</div>
+								</div>
+								<div class="pp-team__row">
+									<div class="pp-team__name">Антон Рубцов</div>
+									<div class="pp-team__role">Программист-электроник</div>
+								</div>
+								<div class="pp-team__row">
+									<div class="pp-team__name">Ильсаф Сафиуллин</div>
+									<div class="pp-team__role">Аналитик</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+		<footer class="footer-old">
+			<div class="container">
+				<div class="footer-old__wrapper">
+					<div class="footer-old__copy">Артём Толстихин © 2026</div>
+				</div>
+			</div>
+		</footer>
+	</div>
+</body>
+
+</html>
