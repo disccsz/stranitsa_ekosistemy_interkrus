@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="icon" href="../favicon.png" />
+
+	<link rel="stylesheet" href="../landing_pages/static/css/fonts.css@v=100.css">
+	<link rel="stylesheet" href="../landing_pages/static/css/reset.css@v=100.css">
+	<link rel="stylesheet" href="../landing_pages/static/css/style.css@v=100.css">
+
+	<script src="../landing_pages/static/libs/gsap/gsap.js"></script>
+	<script src="../landing_pages/static/libs/gsap/gsap-scroll-trigger.js"></script>
+	<script src="../landing_pages/static/js/script.js"></script>
+
+	<title>Переменные окружения — Умная галерея</title>
+
+	<meta property="og:site_name" content="Умная галерея" />
+	<meta name="description" content="Переменные окружения и конфигурация проекта: PostgreSQL, MinIO, Kafka, gRPC, VK Auth." />
+	<meta property="og:description" content="Переменные окружения и конфигурация проекта: PostgreSQL, MinIO, Kafka, gRPC, VK Auth." />
+</head>
+
+<body>
+	<div class="body-wrapper">
+		<header class="header">
+			<div class="container">
+				<div class="header__wrapper">
+					<div class="header__top">
+						<a href="../index.html#vacancy" class="header__logo">
+							<span class="text-24 fw-500">Умная галерея</span>
+						</a>
+						<a href="../index.html" class="header__btn text-20 gradient-text">Изучить</a>
+						<div class="header__menu-btn">
+							<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+								<path d="M3 6H21" stroke="white" stroke-width="2" stroke-linecap="round" />
+								<path d="M3 12H21" stroke="white" stroke-width="2" stroke-linecap="round" />
+								<path d="M3 18H21" stroke="white" stroke-width="2" stroke-linecap="round" />
+							</svg>
+							<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+								<path d="M5.63672 5.63599L18.3646 18.3639" stroke="white" stroke-width="2" stroke-linecap="round" />
+								<path d="M5.63672 18.364L18.3646 5.63609" stroke="white" stroke-width="2" stroke-linecap="round" />
+							</svg>
+						</div>
+					</div>
+
+					<nav class="header__nav nav">
+						<ul class="nav__list fw-500">
+							<li class="nav__item">
+								<a href="../index.html" class="nav__link nav__link_lvl1">Главная</a>
+							</li>
+							<li class="nav__item">
+								<a href="../index.html#vacancy" class="nav__link nav__link_lvl1">Документация</a>
+							</li>
+						</ul>
+						<div class="nav__label">Умная галерея © 2026</div>
+					</nav>
+				</div>
+			</div>
+		</header>
+		<main class="main">
+			<section class="section vacancy-page">
+				<div class="vacancy-page__bg">
+					<img src="../landing_pages/static/img/vacancy-page/bg.png" alt="img">
+				</div>
+				<div class="container">
+					<div class="vacancy-page__wrapper">
+						<div class="vacancy-page__top">
+							<div class="vacancy-page__title text-56 fw-500">
+								Переменные окружения и конфигурация
+							</div>
+						</div>
+						<div class="vacancy-page__content content text-18">
+							<p>Конфигурация загружается из .env через pydantic-settings (app/core/config.py).</p>
+
+							<h2>PostgreSQL</h2>
+<pre>
+DB_USER=postgres
+DB_PASSWORD=postgres
+DB_HOST=127.0.0.1
+DB_PORT=5435
+DB_NAME=photo_analysis
+</pre>
+							<p>URL: postgresql+asyncpg://{DB_USER}:{DB_PASSWORD}@{DB_HOST}:{DB_PORT}/{DB_NAME}</p>
+
+							<h2>MinIO</h2>
+<pre>
+MINIO_ENDPOINT=localhost:9100
+MINIO_ROOT_USER=minioadmin
+MINIO_ROOT_PASSWORD=minioadmin123
+MINIO_BUCKET_NAME=photo-bucket
+</pre>
+
+							<h2>Kafka</h2>
+<pre>
+KAFKA_BOOTSTRAP_SERVERS=kafka:9092
+</pre>
+
+							<h2>gRPC Analyzer</h2>
+<pre>
+ANALYSIS_GRPC_URL=45.132.19.101:50051
+</pre>
+
+							<h2>VK Authentication</h2>
+<pre>
+VK_SECRET_KEY=your_vk_secret_key_here
+JWT_EXPIRE_MINUTES=525600
+</pre>
+
+							<h2>Service</h2>
+<pre>
+SERVICE_TIMEOUT=10
+</pre>
+
+							<h2>Logging</h2>
+<pre>
+LOG_LEVEL=INFO
+DB_ECHO=false
+</pre>
+
+							<h2>Пример .env</h2>
+<pre>
+# PostgreSQL
+DB_USER=postgres
+DB_PASSWORD=postgres
+DB_HOST=127.0.0.1
+DB_PORT=5435
+DB_NAME=photo_analysis
+
+# MinIO
+MINIO_ENDPOINT=localhost:9100
+MINIO_ROOT_USER=minioadmin
+MINIO_ROOT_PASSWORD=minioadmin123
+MINIO_BUCKET_NAME=photo-bucket
+
+# Kafka
+KAFKA_BOOTSTRAP_SERVERS=kafka:9092
+
+# Logging
+LOG_LEVEL=INFO
+DB_ECHO=false
+
+# Service
+SERVICE_TIMEOUT=10
+
+# VK Auth
+VK_SECRET_KEY=your_vk_secret_key_here
+JWT_EXPIRE_MINUTES=525600
+
+# gRPC Analyzer
+ANALYSIS_GRPC_URL=45.132.19.101:50051
+</pre>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+		<footer class="footer-old">
+			<div class="container">
+				<div class="footer-old__wrapper">
+					<div class="footer-old__copy">Умная галерея © 2026</div>
+				</div>
+			</div>
+		</footer>
+	</div>
+</body>
+</html>

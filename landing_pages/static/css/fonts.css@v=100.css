@@ -1,0 +1,79 @@
+@font-face {
+	font-family: 'Gallery Sans';
+	src: url('../fonts/Gallery-Sans/GallerySans-Medium.ttf') format('truetype');
+	font-weight: 500;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Gallery Sans';
+	src: url('../fonts/Gallery-Sans/GallerySans-LightItalic.ttf') format('truetype');
+	font-weight: 300;
+	font-style: italic;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Gallery Sans';
+	src: url('../fonts/Gallery-Sans/GallerySans-MediumItalic.ttf') format('truetype');
+	font-weight: 500;
+	font-style: italic;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Gallery Sans';
+	src: url('../fonts/Gallery-Sans/GallerySans-Bold.ttf') format('truetype');
+	font-weight: bold;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Gallery Sans';
+	src: url('../fonts/Gallery-Sans/GallerySans-Light.ttf') format('truetype');
+	font-weight: 300;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Gallery Sans';
+	src: url('../fonts/Gallery-Sans/GallerySans-DemiBoldItalic.ttf') format('truetype');
+	font-weight: 600;
+	font-style: italic;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Gallery Sans';
+	src: url('../fonts/Gallery-Sans/GallerySans-DemiBold.ttf') format('truetype');
+	font-weight: 600;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Gallery Sans';
+	src: url('../fonts/Gallery-Sans/GallerySans-Italic.ttf') format('truetype');
+	font-weight: normal;
+	font-style: italic;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Gallery Sans';
+	src: url('../fonts/Gallery-Sans/GallerySans-Regular.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Gallery Sans';
+	src: url('../fonts/Gallery-Sans/GallerySans-BoldItalic.ttf') format('truetype');
+	font-weight: bold;
+	font-style: italic;
+	font-display: swap;
+}

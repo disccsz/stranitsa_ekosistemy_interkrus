@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="ru" style="scroll-behavior:smooth;">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" href="favicon.png" />
+
+	<link rel="stylesheet" href="landing_pages/static/css/fonts.css@v=100.css">
+	<link rel="stylesheet" href="landing_pages/static/css/reset.css@v=100.css">
+	<link rel="stylesheet" href="landing_pages/static/css/style.css@v=100.css">
+
+	<script src="landing_pages/static/libs/gsap/gsap.js"></script>
+	<script src="landing_pages/static/libs/gsap/gsap-scroll-trigger.js"></script>
+	<script src="landing_pages/static/js/script.js"></script>
+
+	<title>Умная галерея</title>
+
+	<meta property="og:site_name" content="Умная галерея" />
+	<meta name="description"
+		content="Асинхронная загрузка и AI-анализ фотографий. Детекция лиц, оценка размытия и качества, поиск дубликатов." />
+	<meta property="og:description"
+		content="Асинхронная загрузка и AI-анализ фотографий. Детекция лиц, оценка размытия и качества, поиск дубликатов." />
+
+	
+
+</head>
+
+
+
+
+<body>
+	<div class="body-wrapper">
+		<header class="header">
+			<div class="container">
+				<div class="header__wrapper">
+					<div class="header__top">
+						<div class="header__logo">
+							<span class="text-24 fw-500">Умная галерея</span>
+						</div>
+
+						<a href="https://vk.ru/app54685020?ref=webpage" class="header__btn text-20 fw-500" style="background:#0077FF;color:#fff;padding:8px 20px;border-radius:20px;text-decoration:none;">Открыть в VK</a>
+
+						<div class="header__menu-btn">
+							<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+								fill="none">
+								<path d="M3 6H21" stroke="white" stroke-width="2" stroke-linecap="round" />
+								<path d="M3 12H21" stroke="white" stroke-width="2" stroke-linecap="round" />
+								<path d="M3 18H21" stroke="white" stroke-width="2" stroke-linecap="round" />
+							</svg>
+							<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+								fill="none">
+								<path d="M5.63672 5.63599L18.3646 18.3639" stroke="white" stroke-width="2"
+									stroke-linecap="round" />
+								<path d="M5.63672 18.364L18.3646 5.63609" stroke="white" stroke-width="2"
+									stroke-linecap="round" />
+							</svg>
+						</div>
+					</div>
+
+					<nav class="header__nav nav">
+						<ul class="nav__list fw-500">
+							<li class="nav__item">
+								<a href="index.html" class="nav__link nav__link_lvl1">Главная</a>
+							</li>
+							<li class="nav__item">
+								<a href="index.html" class="nav__link nav__link_lvl1">Для разработчиков</a>
+							</li>
+							<li class="nav__item">
+								<a href="index.html" class="nav__link nav__link_lvl1">Помощь</a>
+							</li>
+							<li class="nav__item">
+								<a href="index.html" class="nav__link nav__link_lvl1">Скачать для iOS</a>
+							</li>
+							<li class="nav__item">
+								<a href="index.html" class="nav__link nav__link_lvl1">Cкачать для всех устройств</a>
+							</li>
+						</ul>
+						<div class="nav__label">Умная галерея</div>
+					</nav>
+				</div>
+			</div>
+		</header>
+		<main class="main">
+			<div class="section-anim">
+				<section class="section vacancy-entrance">
+					<div class="vacancy-entrance__bg">
+						<div class="vacancy-entrance__glow"></div>
+						<div class="vacancy-entrance__beam"></div>
+					</div>
+					<div class="container">
+						<div class="vacancy-entrance__wrapper">
+							<div class="vacancy-entrance__title text-56 fw-500 vacancy-entrance__anim">
+								Загрузка фото. <br>
+								<span>AI-анализ. <br></span>
+								Детекция лиц.
+							</div>
+							<div class="vacancy-entrance__desc text-28 gray-text vacancy-entrance__anim">
+								Асинхронный пайплайн: PostgreSQL, MinIO, Kafka, gRPC-анализатор.
+							</div>
+							<a href="#app-preview" id="scroll-to-preview"
+								class="vacancy-entrance__btn btn btn_gradient-bg text-24 fw-500 vacancy-entrance__anim">
+								Подробнее</a>
+						</div>
+					</div>
+				</section>
+			</div>
+			<div class="section-anim section-anim_border">
+				<section class="section article-block">
+					<div class="container">
+						<div class="article-block__wrapper">
+							<div class="article-block__content">
+								<h2 class="text-56 fw-500">Что такое «Умная галерея»</h2>
+								<p class="text-28 gray-text">Сервис для загрузки и AI-анализа фотографий: детекция лиц, оценка размытия и качества, поиск дубликатов. Обработка асинхронная — фото попадают в очередь Kafka, а gRPC-анализатор возвращает метаданные и превью.</p>
+								<p class="text-24 gray-text">Фото хранятся в MinIO (S3-совместимое хранилище), метаданные — в PostgreSQL 16. API написан на Python 3.14 + FastAPI и разворачивается через Docker Compose или Kubernetes.</p>
+								<a href="architecture/index.html" class="article-block__link text-24 fw-500">
+									Архитектура проекта
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+										<path fill-rule="evenodd" clip-rule="evenodd" d="M9.29289 4.29289C9.68342 3.90237 10.3166 3.90237 10.7071 4.29289L17.7071 11.2929C18.0976 11.6834 18.0976 12.3166 17.7071 12.7071L10.7071 19.7071C10.3166 20.0976 9.68342 20.0976 9.29289 19.7071C8.90237 19.3166 8.90237 18.6834 9.29289 18.2929L15.5858 12L9.29289 5.70711C8.90237 5.31658 8.90237 4.68342 9.29289 4.29289Z" fill="currentColor"/>
+									</svg>
+								</a>
+							</div>
+							<div class="article-block__img">
+								<img src="landing_pages/static/img/video/bg.png" alt="img">
+							</div>
+						</div>
+					</div>
+				</section>
+			</div>
+			<div class="section-anim section-anim_border">
+				<section class="section completed" id="completed">
+					<div class="container">
+						<div class="completed__wrapper">
+							<div class="completed__title text-56 fw-500" id="project">
+								Стек
+							</div>
+							<div class="completed__subtitle text-28 gray-text">
+								Асинхронный пайплайн на Python, FastAPI, Kafka и gRPC.
+							</div>
+							<div class="completed__bg">
+								<img src="landing_pages/static/img/completed/bg.png" alt="img">
+							</div>
+							<div class="completed__list text-24">
+								<div class="completed__item">
+									<div class="completed__text">
+										Python 3.14, asyncio, FastAPI
+									</div>
+								</div>
+								<div class="completed__item">
+									<div class="completed__text">
+										PostgreSQL 16, SQLAlchemy async, Alembic
+									</div>
+								</div>
+								<div class="completed__item">
+									<div class="completed__text">
+										MinIO (S3-совместимое хранилище)
+									</div>
+								</div>
+								<div class="completed__item">
+									<div class="completed__text">
+										Apache Kafka, aiokafka
+									</div>
+								</div>
+								<div class="completed__item">
+									<div class="completed__text">gRPC-анализатор, Protocol Buffers</div>
+								</div>
+								<div class="completed__item">
+									<div class="completed__text">Docker Compose, Kubernetes</div>
+								</div>
+								</div>
+						</div>
+					</div>
+				</section>
+			</div>
+			<div class="section-anim section-anim_border">
+				<section class="section vacancy" id="vacancy">
+					<div class="container">
+						<div class="vacancy__wrapper">
+							<div class="vacancy__bg">
+								<img src="landing_pages/static/img/video/bg.png" alt="img">
+							</div>
+							<div class="vacancy__heading">
+								<div class="vacancy__title text-56 fw-500">Документация</div>
+								<div class="vacancy__desc text-18 gray-text">
+									Архитектура, API, развёртывание, переменные окружения, метрики.
+								</div>
+							</div>
+							<div class="vacancy__list">
+								<a href="architecture/index.html" class="vacancy__link">
+									<div class="vacancy__name text-24">Архитектура проекта</div>
+									<div class="vacancy__tags text-12 gray-text">
+										<div class="vacancy__tags-wrapper">
+											<div class="vacancy__tag">C4-диаграммы</div>
+											<div class="vacancy__tag">Sequence-диаграммы</div>
+											<div class="vacancy__tag">ER-диаграммы</div>
+										</div>
+									</div>
+									<div class="vacancy__caret">
+										<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+											viewBox="0 0 24 24" fill="none">
+											<path fill-rule="evenodd" clip-rule="evenodd"
+												d="M9.29289 4.29289C9.68342 3.90237 10.3166 3.90237 10.7071 4.29289L17.7071 11.2929C18.0976 11.6834 18.0976 12.3166 17.7071 12.7071L10.7071 19.7071C10.3166 20.0976 9.68342 20.0976 9.29289 19.7071C8.90237 19.3166 8.90237 18.6834 9.29289 18.2929L15.5858 12L9.29289 5.70711C8.90237 5.31658 8.90237 4.68342 9.29289 4.29289Z"
+												fill="white" />
+										</svg>
+									</div>
+								</a>
+								<a href="configuration/index.html" class="vacancy__link">
+									<div class="vacancy__name text-24">Переменные окружения и конфигурация</div>
+									<div class="vacancy__tags text-12 gray-text">
+										<div class="vacancy__tags-wrapper">
+											<div class="vacancy__tag">PostgreSQL</div>
+											<div class="vacancy__tag">MinIO</div>
+											<div class="vacancy__tag">Kafka</div>
+											<div class="vacancy__tag">JWT</div>
+											<div class="vacancy__tag">gRPC</div>
+										</div>
+									</div>
+									<div class="vacancy__caret">
+										<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+											viewBox="0 0 24 24" fill="none">
+											<path fill-rule="evenodd" clip-rule="evenodd"
+												d="M9.29289 4.29289C9.68342 3.90237 10.3166 3.90237 10.7071 4.29289L17.7071 11.2929C18.0976 11.6834 18.0976 12.3166 17.7071 12.7071L10.7071 19.7071C10.3166 20.0976 9.68342 20.0976 9.29289 19.7071C8.90237 19.3166 8.90237 18.6834 9.29289 18.2929L15.5858 12L9.29289 5.70711C8.90237 5.31658 8.90237 4.68342 9.29289 4.29289Z"
+												fill="white" />
+										</svg>
+									</div>
+								</a>
+								<a href="monitoring/index.html" class="vacancy__link">
+									<div class="vacancy__name text-24">Мониторинг и метрики</div>
+									<div class="vacancy__tags text-12 gray-text">
+										<div class="vacancy__tags-wrapper">
+											<div class="vacancy__tag">Prometheus</div>
+											<div class="vacancy__tag">Grafana</div>
+											<div class="vacancy__tag">Health check</div>
+										</div>
+									</div>
+									<div class="vacancy__caret">
+										<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+											viewBox="0 0 24 24" fill="none">
+											<path fill-rule="evenodd" clip-rule="evenodd"
+												d="M9.29289 4.29289C9.68342 3.90237 10.3166 3.90237 10.7071 4.29289L17.7071 11.2929C18.0976 11.6834 18.0976 12.3166 17.7071 12.7071L10.7071 19.7071C10.3166 20.0976 9.68342 20.0976 9.29289 19.7071C8.90237 19.3166 8.90237 18.6834 9.29289 18.2929L15.5858 12L9.29289 5.70711C8.90237 5.31658 8.90237 4.68342 9.29289 4.29289Z"
+												fill="white" />
+										</svg>
+									</div>
+								</a>
+								<a href="api/index.html" class="vacancy__link">
+									<div class="vacancy__name text-24">API endpoints</div>
+									<div class="vacancy__tags text-12 gray-text">
+										<div class="vacancy__tags-wrapper">
+											<div class="vacancy__tag">POST /api/v1/photo/auth</div>
+											<div class="vacancy__tag">POST /api/v1/photos/</div>
+											<div class="vacancy__tag">GET /api/v1/photos/{id}</div>
+											<div class="vacancy__tag">duplicate-groups</div>
+										</div>
+									</div>
+									<div class="vacancy__caret">
+										<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+											viewBox="0 0 24 24" fill="none">
+											<path fill-rule="evenodd" clip-rule="evenodd"
+												d="M9.29289 4.29289C9.68342 3.90237 10.3166 3.90237 10.7071 4.29289L17.7071 11.2929C18.0976 11.6834 18.0976 12.3166 17.7071 12.7071L10.7071 19.7071C10.3166 20.0976 9.68342 20.0976 9.29289 19.7071C8.90237 19.3166 8.90237 18.6834 9.29289 18.2929L15.5858 12L9.29289 5.70711C8.90237 5.31658 8.90237 4.68342 9.29289 4.29289Z"
+												fill="white" />
+										</svg>
+									</div>
+								</a>
+								<a href="deployment/index.html" class="vacancy__link">
+									<div class="vacancy__name text-24">Развёртывание</div>
+									<div class="vacancy__tags text-12 gray-text">
+										<div class="vacancy__tags-wrapper">
+											<div class="vacancy__tag">Docker Compose</div>
+											<div class="vacancy__tag">Kubernetes</div>
+											<div class="vacancy__tag">Nginx</div>
+										</div>
+									</div>
+									<div class="vacancy__caret">
+										<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+											viewBox="0 0 24 24" fill="none">
+											<path fill-rule="evenodd" clip-rule="evenodd"
+												d="M9.29289 4.29289C9.68342 3.90237 10.3166 3.90237 10.7071 4.29289L17.7071 11.2929C18.0976 11.6834 18.0976 12.3166 17.7071 12.7071L10.7071 19.7071C10.3166 20.0976 9.68342 20.0976 9.29289 19.7071C8.90237 19.3166 8.90237 18.6834 9.29289 18.2929L15.5858 12L9.29289 5.70711C8.90237 5.31658 8.90237 4.68342 9.29289 4.29289Z"
+												fill="white" />
+										</svg>
+									</div>
+								</a>
+							</div>
+							<div class="vacancy__label text-18 gray-text">
+								<a href="https://www.disscsz.ru/umnaya_galereya/docs/index.html">Полная документация</a>
+							</div>
+						</div>
+					</div>
+				</section>
+			</div>
+			<section class="section iframe-block" id="app-preview" style="padding: 80px 0;">
+				<div class="container">
+					<div class="section__title text-56 fw-500" style="margin-bottom:24px;">Попробуйте сами</div>
+					<div class="section__subtitle text-28 gray-text" style="margin-bottom:40px;">Загрузите фото и посмотрите, как работает детекция лиц, оценка качества и поиск дубликатов.</div>
+					<iframe src="https://prod-app54685020-bc06c74baa14.pages-ac.vk-apps.com/index.html" style="width:100%;height:700px;border:none;border-radius:16px;"></iframe>
+					<div class="section" style="margin-top:40px;padding:48px;border-radius:24px;background:var(--black-2);text-align:center;">
+						<div class="text-36 fw-500" style="margin-bottom:16px;">Полный функционал — в VK</div>
+						<div class="text-18 gray-text" style="margin-bottom:12px;">Откройте в VK Mini Apps и получите:</div>
+						<ul class="text-18 gray-text" style="list-style:none;padding:0;margin:0 0 32px;display:flex;justify-content:center;gap:24px;flex-wrap:wrap;">
+							<li style="color:#fff;">✓ Удобный интерфейс</li>
+							<li style="color:#fff;">✓ Личная галерея</li>
+						</ul>
+						<a href="https://vk.ru/app54685020?ref=webpage" class="btn btn_gradient-bg text-24 fw-500" style="display:inline-block;padding:16px 48px;text-decoration:none;">Открыть в VK</a>
+					</div>
+				</div>
+			</section>
+		</main>
+		<footer class="footer-old">
+			<div class="container">
+				<div class="footer-old__wrapper">
+					<div class="footer-old__copy">Умная галерея © 2026</div>
+				</div>
+			</div>
+		</footer>
+
+	</div>
+
+</body>
+
+</html>

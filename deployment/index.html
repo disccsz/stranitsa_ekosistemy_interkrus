@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="icon" href="../favicon.png" />
+
+	<link rel="stylesheet" href="../landing_pages/static/css/fonts.css@v=100.css">
+	<link rel="stylesheet" href="../landing_pages/static/css/reset.css@v=100.css">
+	<link rel="stylesheet" href="../landing_pages/static/css/style.css@v=100.css">
+
+	<script src="../landing_pages/static/libs/gsap/gsap.js"></script>
+	<script src="../landing_pages/static/libs/gsap/gsap-scroll-trigger.js"></script>
+	<script src="../landing_pages/static/js/script.js"></script>
+
+	<title>Развёртывание — Умная галерея</title>
+
+	<meta property="og:site_name" content="Умная галерея" />
+	<meta name="description" content="Развёртывание проекта: Docker Compose, Kubernetes (kind), Dockerfile, Production настройки." />
+	<meta property="og:description" content="Развёртывание проекта: Docker Compose, Kubernetes (kind), Dockerfile, Production настройки." />
+</head>
+
+<body>
+	<div class="body-wrapper">
+		<header class="header">
+			<div class="container">
+				<div class="header__wrapper">
+					<div class="header__top">
+						<a href="../index.html#vacancy" class="header__logo">
+							<span class="text-24 fw-500">Умная галерея</span>
+						</a>
+						<a href="../index.html" class="header__btn text-20 gradient-text">Изучить</a>
+						<div class="header__menu-btn">
+							<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+								<path d="M3 6H21" stroke="white" stroke-width="2" stroke-linecap="round" />
+								<path d="M3 12H21" stroke="white" stroke-width="2" stroke-linecap="round" />
+								<path d="M3 18H21" stroke="white" stroke-width="2" stroke-linecap="round" />
+							</svg>
+							<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+								<path d="M5.63672 5.63599L18.3646 18.3639" stroke="white" stroke-width="2" stroke-linecap="round" />
+								<path d="M5.63672 18.364L18.3646 5.63609" stroke="white" stroke-width="2" stroke-linecap="round" />
+							</svg>
+						</div>
+					</div>
+
+					<nav class="header__nav nav">
+						<ul class="nav__list fw-500">
+							<li class="nav__item">
+								<a href="../index.html" class="nav__link nav__link_lvl1">Главная</a>
+							</li>
+							<li class="nav__item">
+								<a href="../index.html#vacancy" class="nav__link nav__link_lvl1">Документация</a>
+							</li>
+						</ul>
+						<div class="nav__label">Умная галерея © 2026</div>
+					</nav>
+				</div>
+			</div>
+		</header>
+		<main class="main">
+			<section class="section vacancy-page">
+				<div class="vacancy-page__bg">
+					<img src="../landing_pages/static/img/vacancy-page/bg.png" alt="img">
+				</div>
+				<div class="container">
+					<div class="vacancy-page__wrapper">
+						<div class="vacancy-page__top">
+							<div class="vacancy-page__title text-56 fw-500">
+								Развёртывание
+							</div>
+						</div>
+						<div class="vacancy-page__content content text-18">
+							<h2>Docker Compose — Полный стек</h2>
+							<p>Файл docker-compose.yml в корне проекта описывает 8 сервисов:</p>
+<pre>
+postgres     — postgres:16-alpine (порт 5435:5432)
+minio        — minio/minio:latest
+nginx        — nginx:alpine (реверс-прокси для MinIO)
+kafka        — apache/kafka:latest
+api          — сборка из Dockerfile (FastAPI)
+worker       — сборка из Dockerfile (фоновый обработчик)
+prometheus   — prom/prometheus
+grafana      — grafana/grafana
+</pre>
+
+<pre>
+# Запуск
+docker compose up -d
+
+# Логи конкретного сервиса
+docker compose logs -f api
+
+# Остановка с удалением томов
+docker compose down -v
+</pre>
+
+							<h2>Переменные для Production</h2>
+							<ul>
+								<li>VK_SECRET_KEY — сгенерировать надёжный ключ</li>
+								<li>DB_PASSWORD — надёжный пароль</li>
+								<li>MINIO_ROOT_PASSWORD — надёжный пароль</li>
+								<li>MINIO_PUBLIC_URL — публичный домен MinIO</li>
+								<li>ANALYSIS_GRPC_URL — адрес gRPC анализатора</li>
+								<li>LOG_LEVEL — WARNING для production</li>
+							</ul>
+
+							<h2>Kubernetes (kind)</h2>
+
+							<h3>Манифесты (k8s/, 11 файлов)</h3>
+<pre>
+00-namespace.yaml     — Namespace umnaya
+01-configmap.yaml     — ConfigMap
+02-secret.yaml        — Secret
+03-postgres.yaml      — Deployment + Service PostgreSQL
+04-minio.yaml         — Deployment + Service MinIO
+05-kafka.yaml         — Deployment + Service Kafka
+06-api-deployment.yaml — Deployment API
+07-api-service.yaml    — Service API (ClusterIP)
+08-worker-deployment.yaml — Deployment Worker
+09-nginx.yaml          — Deployment + Service Nginx
+10-volumes.yaml        — PV + PVC
+</pre>
+
+							<h3>Деплой</h3>
+<pre>
+kind create cluster --name umnaya
+docker exec umnaya-control-plane mkdir -p /var/lib/umnaya/{postgres,minio,kafka}
+docker build -t umnaya-api .
+kind load docker-image umnaya-api --name umnaya
+kubectl apply -f k8s/
+kubectl port-forward -n umnaya svc/api-service 8000:8000 --address 0.0.0.0
+</pre>
+
+							<h3>Особенности</h3>
+							<ul>
+								<li>initContainer wait-postgres: ждёт готовности PostgreSQL перед запуском API</li>
+								<li>initContainer alembic-upgrade: применяет миграции перед стартом API</li>
+								<li>livenessProbe: GET /healthz (порт 8000)</li>
+								<li>readinessProbe: GET /readyz (порт 8000)</li>
+								<li>PersistentVolume: hostPath /var/lib/umnaya/</li>
+								<li>StorageClass: manual</li>
+							</ul>
+
+							<h2>Dockerfile</h2>
+<pre>
+FROM python:3.14-slim
+WORKDIR /app
+COPY requirements.txt .
+RUN apt-get update && apt-get install -y --no-install-recommends g++ gcc && \
+    pip install --no-cache-dir -r requirements.txt && \
+    apt-get purge -y --auto-remove g++ gcc
+COPY . .
+EXPOSE 8000
+CMD ["sh", "-c", "alembic upgrade head && exec uvicorn app.main:app --host 0.0.0.0 --port 8000"]
+</pre>
+							<p>Образ используется как для API (uvicorn), так и для Worker (python -m app.worker).</p>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+		<footer class="footer-old">
+			<div class="container">
+				<div class="footer-old__wrapper">
+					<div class="footer-old__copy">Умная галерея © 2026</div>
+				</div>
+			</div>
+		</footer>
+	</div>
+</body>
+</html>
