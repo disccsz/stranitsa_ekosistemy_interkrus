@@ -6,21 +6,21 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="icon" type="image/png" href="favicon.png" />
 
-	<link rel="stylesheet" href="landing_pages/static/css/fonts.css?v=1">
-	<link rel="stylesheet" href="landing_pages/static/css/reset.css?v=1">
-	<link rel="stylesheet" href="landing_pages/static/css/style.css?v=1">
+	<link rel="stylesheet" href="landing_pages/static/css/fonts.css?v=3">
+	<link rel="stylesheet" href="landing_pages/static/css/reset.css?v=3">
+	<link rel="stylesheet" href="landing_pages/static/css/style.css?v=3">
 
-	<script defer src="landing_pages/static/libs/gsap/gsap.min.js"></script>
-	<script defer src="landing_pages/static/libs/gsap/ScrollTrigger.min.js"></script>
-	<script defer src="landing_pages/static/js/script.js"></script>
+	<script defer src="landing_pages/static/libs/gsap/gsap.min.js?v=3"></script>
+	<script defer src="landing_pages/static/libs/gsap/ScrollTrigger.min.js?v=3"></script>
+	<script defer src="landing_pages/static/js/script.js?v=3"></script>
 
 	<title>Умная галерея</title>
 
-	<link rel="canonical" href="index.html" />
+	<link rel="canonical" href="https://www.disccsz.ru/umnaya_galereya/index.html" />
 
 	<meta property="og:site_name" content="Умная галерея" />
 	<meta property="og:title" content="Умная галерея — AI-анализ фотографий" />
-	<meta property="og:url" content="index.html" />
+	<meta property="og:url" content="https://www.disccsz.ru/umnaya_galereya/index.html" />
 	<meta property="og:image" content="landing_pages/static/img/video/bg.png" />
 	<meta property="og:type" content="website" />
 	<meta name="description"
@@ -124,11 +124,9 @@
 					<div class="container">
 						<div class="article-block__wrapper">
 							<div class="article-block__content">
-								<h2 class="text-56 fw-500">О проекте «Умная галерея»</h2>
-								<p class="text-24 gray-text">29 июня 2026 - 23 июля 2026</p>
-								<p class="text-28 gray-text">Проектно-образовательная практика — это одна из ключевых особенностей программы «Проектирование, разработка и управление сложными информационными системами». Я прошёл первую практику в компани ВК, работая над решением кейса от ВК Образования и Mail. Формат работы был индивидуальный, но под менторством преподавателя-эксперта ВК Артёма Черникова. Работа над кейсом сопровождалась воркшопами. По итогам практики прошла финальная защита перед экспертами-сотрудниками ВК и получена равзернутая обратая связь. Данная страница посвящена презентации получившегося проекта.</p>
-								<p class="text-24 gray-text">Сервис принимает изображения, сохраняет их, ставит задачи на обработку в очередь сообщений и предоставляет результаты анализа через API. В результате обработки для каждой фотографии определяются различные характеристики: наличие смазанных изображений, количество лиц на фотографии, наличие дубликатов и признаки неудачных кадров (например, закрытые глаза).
-Основной фокус проекта - проектирование и реализация надёжной backend-системы: микросервисная архитектура, взаимодействие сервисов по HTTP/gRPC, асинхронная обработка через Kafka, хранение данных в СУБД, логирование, метрики, мониторинг, документация API, контейнеризация и развёртывание в Kubernetes. Алгоритмы анализа изображений реализуются в отдельном сервисе и рассматриваются как внешняя зависимость; задача заключается не в обучении моделей, а в построении масштабируемой и отказоустойчивой системы обработки данных вокруг них. В ходе работы нам как студентам также было положено вести документацию и схему проекта в ВК Доске, декомпозировать задачи,вести их в трекере.</p>
+								<h2 class="text-56 fw-500">Что такое «Умная галерея»</h2>
+								<p class="text-28 gray-text">Сервис для загрузки и AI-анализа фотографий: детекция лиц, оценка размытия и качества, поиск дубликатов. Обработка асинхронная — фото попадают в очередь Kafka, а gRPC-анализатор возвращает метаданные и превью.</p>
+								<p class="text-24 gray-text">Фото хранятся в MinIO (S3-совместимое хранилище), метаданные — в PostgreSQL 16. API написан на Python 3.14 + FastAPI и разворачивается через Docker Compose или Kubernetes.</p>
 								<a href="architecture/index.html" class="article-block__link text-24 fw-500">
 									Архитектура проекта
 									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -136,7 +134,9 @@
 									</svg>
 								</a>
 							</div>
-
+							<div class="article-block__img">
+								<img src="landing_pages/static/img/video/bg.png" alt="Интерфейс умной галереи" width="1401" height="1389" loading="lazy" decoding="async">
+							</div>
 						</div>
 					</div>
 				</section>
@@ -157,7 +157,7 @@
 							<div class="completed__list text-24">
 								<div class="completed__item">
 									<div class="completed__text">
-										Python 3.14, asyncio, FastAPI, Pillow
+										Python 3.14, asyncio, FastAPI
 									</div>
 								</div>
 								<div class="completed__item">
@@ -177,9 +177,6 @@
 								</div>
 								<div class="completed__item">
 									<div class="completed__text">gRPC-анализатор, Protocol Buffers</div>
-								</div>
-								<div class="completed__item">
-									<div class="completed__text">JS, React, VK Mini Apps</div>
 								</div>
 								<div class="completed__item">
 									<div class="completed__text">Docker Compose, Kubernetes</div>
@@ -324,7 +321,7 @@
 		<footer class="footer-old">
 			<div class="container">
 				<div class="footer-old__wrapper">
-					<div class="footer-old__copy">Умная галерея © Артём Толстихин @disccsz 2026</div>
+					<div class="footer-old__copy">Умная галерея © 2026</div>
 				</div>
 			</div>
 		</footer>

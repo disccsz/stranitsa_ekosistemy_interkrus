@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://disccsz.github.io/stranitsa_ekosistemy_interkrus/sitemap.xml
+Sitemap: https://www.disccsz.ru/sitemap.xml

@@ -1,39 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 	<url>
-		<loc>https://disccsz.github.io/stranitsa_ekosistemy_interkrus/index.html</loc>
+		<loc>https://www.disccsz.ru/index.html</loc>
 		<priority>1.0</priority>
 	</url>
 	<url>
-		<loc>https://disccsz.github.io/stranitsa_ekosistemy_interkrus/architecture/index.html</loc>
+		<loc>https://www.disccsz.ru/blog/index.html</loc>
+		<priority>0.9</priority>
+	</url>
+	<url>
+		<loc>https://www.disccsz.ru/architecture/index.html</loc>
 		<priority>0.8</priority>
 	</url>
 	<url>
-		<loc>https://disccsz.github.io/stranitsa_ekosistemy_interkrus/api/index.html</loc>
+		<loc>https://www.disccsz.ru/api/index.html</loc>
 		<priority>0.8</priority>
 	</url>
 	<url>
-		<loc>https://disccsz.github.io/stranitsa_ekosistemy_interkrus/configuration/index.html</loc>
+		<loc>https://www.disccsz.ru/configuration/index.html</loc>
 		<priority>0.6</priority>
 	</url>
 	<url>
-		<loc>https://disccsz.github.io/stranitsa_ekosistemy_interkrus/deployment/index.html</loc>
+		<loc>https://www.disccsz.ru/deployment/index.html</loc>
 		<priority>0.7</priority>
 	</url>
 	<url>
-		<loc>https://disccsz.github.io/stranitsa_ekosistemy_interkrus/monitoring/index.html</loc>
+		<loc>https://www.disccsz.ru/monitoring/index.html</loc>
 		<priority>0.6</priority>
 	</url>
 	<url>
-		<loc>https://disccsz.github.io/stranitsa_ekosistemy_interkrus/projects/vkr-2025/index.html</loc>
+		<loc>https://www.disccsz.ru/projects/vkr-2025/index.html</loc>
 		<priority>0.6</priority>
 	</url>
 	<url>
-		<loc>https://disccsz.github.io/stranitsa_ekosistemy_interkrus/projects/bc-69077/index.html</loc>
+		<loc>https://www.disccsz.ru/projects/bc-69077/index.html</loc>
 		<priority>0.6</priority>
 	</url>
 	<url>
-		<loc>https://disccsz.github.io/stranitsa_ekosistemy_interkrus/projects/tbank-lfstl/index.html</loc>
+		<loc>https://www.disccsz.ru/projects/tbank-lfstl/index.html</loc>
+		<priority>0.6</priority>
+	</url>
+	<url>
+		<loc>https://www.disccsz.ru/projects/93271/index.html</loc>
+		<priority>0.6</priority>
+	</url>
+	<url>
+		<loc>https://www.disccsz.ru/umnaya_galereya/index.html</loc>
 		<priority>0.6</priority>
 	</url>
 </urlset>

@@ -8,28 +8,27 @@
 	<link rel="icon" type="image/png" href="favicon.png" />
 	<link rel="apple-touch-icon" href="apple-touch-icon.png" />
 
-	<link rel="stylesheet" href="landing_pages/static/css/fonts.css?v=1">
-	<link rel="stylesheet" href="landing_pages/static/css/reset.css?v=1">
-	<link rel="stylesheet" href="landing_pages/static/css/style.css?v=2">
+	<link rel="stylesheet" href="landing_pages/static/css/fonts.css?v=3">
+	<link rel="stylesheet" href="landing_pages/static/css/reset.css?v=3">
+	<link rel="stylesheet" href="landing_pages/static/css/style.css?v=4">
 
-	<script defer src="landing_pages/static/libs/gsap/gsap.min.js"></script>
-	<script defer src="landing_pages/static/libs/gsap/ScrollTrigger.min.js"></script>
-	<script defer src="landing_pages/static/js/script.js"></script>
+	<script defer src="landing_pages/static/libs/gsap/gsap.min.js?v=3"></script>
+	<script defer src="landing_pages/static/libs/gsap/ScrollTrigger.min.js?v=3"></script>
+	<script defer src="landing_pages/static/js/script.js?v=3"></script>
+	<script defer src="blog/data/posts-data.js?v=4"></script>
+	<script defer src="landing_pages/static/js/blog-fan.js?v=4"></script>
 
 	<title>Артём Толстихин</title>
 
-	<link rel="canonical" href="index.html" />
+	<link rel="canonical" href="https://www.disccsz.ru/index.html" />
 
 	<meta property="og:site_name" content="Артём Толстихин" />
 	<meta property="og:title" content="Артём Толстихин — личная страница" />
-	<meta property="og:url" content="index.html" />
+	<meta property="og:url" content="https://www.disccsz.ru/index.html" />
 	<meta property="og:image" content="favicon.png" />
 	<meta property="og:type" content="website" />
 	<meta name="description"
 		content="Личная страница Артёма Толстихина — студента Университета «Сириус»: технологии, наука, проекты и увлечения." />
-	<meta name="keywords"
-		content="Артём Толстихин, disccsz, Интеркрус, INTERKRUS, Университет Сириус, Президентский лицей, инженерия, разработка ПО, Python, C++, Kafka, gRPC, AI-анализ, VK Mini Apps, ракетостроение, KQR-202X, VKR-2025, BC-69077, робототехника, большие вызовы, портфолио разработчика, личный сайт визитка">
-
 	<meta property="og:description"
 		content="Личная страница Артёма Толстихина — студента Университета «Сириус»: технологии, наука, проекты и увлечения." />
 </head>
@@ -70,6 +69,9 @@
 							</li>
 							<li class="nav__item">
 								<a href="#about" class="nav__link nav__link_lvl1">Обо мне</a>
+							</li>
+							<li class="nav__item">
+								<a href="blog/index.html" class="nav__link nav__link_lvl1">Блог</a>
 							</li>
 							<li class="nav__item">
 								<a href="#hobbies" class="nav__link nav__link_lvl1">Увлечения</a>
@@ -114,11 +116,26 @@
 								<span>Артёма Толстихина</span>
 							</h1>
 							<div class="vacancy-entrance__desc text-28 gray-text vacancy-entrance__anim">
-								Учусь, проектирую, развиваю технологии, живу — и по одной задаче за раз приближаю счастливое будущее.
+								Студент Университета «Сириус». Учусь, проектирую, развиваю технологии — и по одной задаче за раз приближаю будущее страны.
 							</div>
 							<a href="#about" id="scroll-to-preview"
 								class="vacancy-entrance__btn btn btn_gradient-bg text-24 fw-500 vacancy-entrance__anim">
 								Подробнее</a>
+						</div>
+					</div>
+				</section>
+			</div>
+			<div class="section-anim section-anim_border">
+				<section class="section blog-fan-section" id="blog">
+					<div class="container">
+						<div class="blog-fan__heading">
+							<h2 class="text-56 fw-500">Журнал «Дисковод»</h2>
+							<p class="text-28 gray-text">Жизнь студента, путешествия, походы и технологии — свежие заметки о том, чем я живу.</p>
+						</div>
+						<div class="blog-fan" id="blog-fan" aria-label="Свежие статьи блога"></div>
+						<div class="blog-fan__cta">
+							<a href="blog/index.html" class="btn btn_gradient-bg text-24 fw-500">Читать журнал</a>
+							<span class="text-16 gray-text" id="blog-fan-note">Новые заметки появляются регулярно — заглядывайте!</span>
 						</div>
 					</div>
 				</section>
@@ -356,26 +373,16 @@
 							<div class="contacts__qr">
 								<img src="landing_pages/static/img/qr/vk.png" alt="QR-код: страница ВКонтакте" width="528" height="528" loading="lazy" decoding="async">
 								<span class="text-18 fw-500">ВКонтакте</span>
-																						<div class="contacts__btns">
-							<a href="https://vk.ru/disccsz" class="btn btn_gradient-bg text-24 fw-500 contacts__btn">ВКонтакте</a>
-														</div>
 							</div>
 							<div class="contacts__qr">
 								<img src="landing_pages/static/img/qr/mail.png" alt="QR-код: электронная почта" width="528" height="528" loading="lazy" decoding="async">
 								<span class="text-18 fw-500">Почта</span>
-														<div class="contacts__btns">
-							<a href="mailto:disccsz@mail.ru" class="btn btn_gradient-bg text-24 fw-500 contacts__btn">disccsz@mail.ru</a>
-														</div>
-							</div>
-							<div class="contacts__qr">
-								<img src="landing_pages/static/img/qr/github.png" alt="QR-код: гитхаб" width="528" height="528" loading="lazy" decoding="async">
-								<span class="text-18 fw-500">GitHub</span>
-																														<div class="contacts__btns">
-							<a href="https://github.com/disccsz/" class="btn btn_gradient-bg text-24 fw-500 contacts__btn">GitHub</a>
-														</div>
 							</div>
 						</div>
-
+						<div class="contacts__btns">
+							<a href="https://vk.ru/disccsz" class="btn btn_vk text-24 fw-500 contacts__btn">Открыть в ВК</a>
+							<a href="mailto:disccsz@mail.ru" class="btn btn_gradient-bg text-24 fw-500 contacts__btn">disccsz@mail.ru</a>
+						</div>
 					</div>
 				</div>
 			</section>

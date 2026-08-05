@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" type="image/png" href="favicon.png" />
+
+	<link rel="stylesheet" href="landing_pages/static/css/fonts.css?v=3">
+	<link rel="stylesheet" href="landing_pages/static/css/reset.css?v=3">
+	<link rel="stylesheet" href="landing_pages/static/css/style.css?v=3">
+
+	<script defer src="landing_pages/static/libs/gsap/gsap.min.js?v=3"></script>
+	<script defer src="landing_pages/static/libs/gsap/ScrollTrigger.min.js?v=3"></script>
+	<script defer src="landing_pages/static/js/script.js?v=3"></script>
+
+	<script defer src="landing_pages/static/libs/d3-force/d3-dispatch.min.js?v=3"></script>
+	<script defer src="landing_pages/static/libs/d3-force/d3-quadtree.min.js?v=3"></script>
+	<script defer src="landing_pages/static/libs/d3-force/d3-timer.min.js?v=3"></script>
+	<script defer src="landing_pages/static/libs/d3-force/d3-force.min.js?v=3"></script>
+	<script defer src="data/posts-data.js"></script>
+	<script defer src="data/collections.js"></script>
+	<script defer src="landing_pages/static/js/posts.js?v=4"></script>
+	<script defer src="landing_pages/static/js/graph.js?v=3"></script>
+
+	<title>Журнал «Дисковод»</title>
+
+	<link rel="canonical" href="https://www.disccsz.ru/blog/index.html" />
+
+	<meta property="og:site_name" content="Журнал «Дисковод»" />
+	<meta property="og:title" content="Журнал «Дисковод» — заметки о коде" />
+	<meta property="og:url" content="https://www.disccsz.ru/blog/index.html" />
+	<meta property="og:image" content="landing_pages/static/img/video/bg.png" />
+	<meta property="og:type" content="website" />
+	<meta name="description"
+		content="Личный журнал Артёма Толстихина: жизнь студента Университета Сириус, путешествия и походы, спорт и события. Новое появляется сверху." />
+	<meta property="og:description"
+		content="Личный журнал Артёма Толстихина: жизнь студента Университета Сириус, путешествия и походы, спорт и события. Новое появляется сверху." />
+</head>
+
+<body>
+	<div class="body-wrapper">
+		<header class="header">
+			<div class="container">
+				<div class="header__wrapper">
+					<div class="header__top">
+						<a href="index.html" class="header__logo">
+							<span class="text-24 fw-500">Журнал «Дисковод»</span>
+						</a>
+
+						<button type="button" class="header__menu-btn" aria-label="Меню" aria-expanded="false" aria-controls="nav">
+							<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+								fill="none">
+								<path d="M3 6H21" stroke="white" stroke-width="2" stroke-linecap="round" />
+								<path d="M3 12H21" stroke="white" stroke-width="2" stroke-linecap="round" />
+								<path d="M3 18H21" stroke="white" stroke-width="2" stroke-linecap="round" />
+							</svg>
+							<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+								fill="none">
+								<path d="M5.63672 5.63599L18.3646 18.3639" stroke="white" stroke-width="2"
+									stroke-linecap="round" />
+								<path d="M5.63672 18.364L18.3646 5.63609" stroke="white" stroke-width="2"
+									stroke-linecap="round" />
+							</svg>
+						</button>
+					</div>
+
+					<nav class="header__nav nav" id="nav">
+						<ul class="nav__list fw-500">
+							<li class="nav__item">
+								<a href="index.html" class="nav__link nav__link_lvl1">Главная</a>
+							</li>
+							<li class="nav__item">
+								<a href="index.html#articles" class="nav__link nav__link_lvl1">Статьи</a>
+							</li>
+							<li class="nav__item">
+								<a href="index.html#about" class="nav__link nav__link_lvl1">О блоге</a>
+							</li>
+							<li class="nav__item">
+								<a href="../index.html" class="nav__link nav__link_lvl1">Основной сайт</a>
+							</li>
+						</ul>
+						<div class="nav__label">Журнал «Дисковод»</div>
+					</nav>
+				</div>
+			</div>
+		</header>
+		<main class="main">
+			<div class="section-anim">
+				<section class="section vacancy-entrance">
+					<div class="vacancy-entrance__bg">
+						<div class="vacancy-entrance__glow"></div>
+						<div class="vacancy-entrance__beam"></div>
+						<div class="vacancy-entrance__ticker">поступление в Сириус</div>
+						<div class="vacancy-entrance__ticker">поход к статуе Прометея</div>
+						<div class="vacancy-entrance__ticker">Роза Хутор · пешком</div>
+						<div class="vacancy-entrance__ticker">первый семестр: итоги</div>
+						<div class="vacancy-entrance__ticker">Абхазия за один день</div>
+						<div class="vacancy-entrance__ticker">Универсиада-2019</div>
+						<div class="vacancy-entrance__ticker">ВНОТ · Финополис</div>
+						<div class="vacancy-entrance__ticker">Большие вызовы-2025</div>
+						<div class="vacancy-entrance__ticker">нырок в ледяное море</div>
+						<div class="vacancy-entrance__ticker">день знаний в лицее</div>
+						<div class="vacancy-entrance__ticker">Кутарские водопады</div>
+						<div class="vacancy-entrance__ticker">концерт ССМШ</div>
+						<div class="vacancy-entrance__ticker">встреча с Дамиром Юсуповым</div>
+						<div class="vacancy-entrance__ticker">велосипед студента</div>
+						<div class="vacancy-entrance__ticker">неделя без интернета</div>
+						<div class="vacancy-entrance__ticker">морская рыбалка у Адлера</div>
+					</div>
+					<div class="container">
+						<div class="vacancy-entrance__wrapper">
+							<h1 class="vacancy-entrance__title text-56 fw-500 vacancy-entrance__anim">
+								Документирую свою жизнь<br>
+								<span>и путь к успеху<br></span>
+							</h1>
+							<div class="vacancy-entrance__desc text-28 gray-text vacancy-entrance__anim">
+								«Бортовой журнал с элементами личного дневника». В это понятие я закладываю глубокий смысл, и чем-то мой журнал действительно может быть похож на бортовой журнал пилота самолёта.
+							</div>
+							<a href="#articles" id="scroll-to-preview"
+								class="vacancy-entrance__btn btn btn_gradient-bg text-24 fw-500 vacancy-entrance__anim">
+								Читать статьи</a>
+						</div>
+					</div>
+				</section>
+			</div>
+			<div class="section-anim section-anim_border">
+				<section class="section article-block" id="about">
+					<div class="container">
+						<div class="article-block__wrapper">
+							<div class="article-block__content">
+								<h2 class="text-56 fw-500">О блоге</h2>
+								<a href="article/o-kanale-diskovod/index.html" class="about-feature">
+									<div class="about-feature__cover">
+										<img src="article/o-kanale-diskovod/photo_5215694158851412170_y.jpg"
+											alt="«Дисководу» больше четырёх лет" loading="lazy">
+									</div>
+									<div class="about-feature__body">
+										<div class="about-feature__label text-12">История блога</div>
+										<div class="about-feature__title text-24 fw-500">«Дисководу» больше четырёх лет</div>
+										<div class="about-feature__thesis text-16 gray-text">А вы знали, что со дня создания
+											«Дисковод» прошло уже свыше 4 лет? Этот пост — о прошлом, настоящем и будущем канала.</div>
+										<div class="about-feature__link text-16">
+											Читать статью
+											<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none">
+												<path fill-rule="evenodd" clip-rule="evenodd" d="M9.29289 4.29289C9.68342 3.90237 10.3166 3.90237 10.7071 4.29289L17.7071 11.2929C18.0976 11.6834 18.0976 12.3166 17.7071 12.7071L10.7071 19.7071C10.3166 20.0976 9.68342 20.0976 9.29289 19.7071C8.90237 19.3166 8.90237 18.6834 9.29289 18.2929L15.5858 12L9.29289 5.70711C8.90237 5.31658 8.90237 4.68342 9.29289 4.29289Z" fill="currentColor"/>
+											</svg>
+										</div>
+									</div>
+								</a>
+								<p class="text-28 gray-text">Привет! Я Артём Толстихин (@disccsz). Пишу обо всём, что считаю интересным зафикисировать на страницах моей цифровой книги. Часто развернуто и интересно.</p>
+								<p class="text-24 gray-text">Данный сайт - удобный способ чтения отобранных статей, которые были в тгк "Дисковод" и моей странице ВК.
+									Формат — микро-журнал: короткие посты без воды, новое появляется сверху.</p>
+								<a href="../index.html" class="article-block__link text-24 fw-500">
+									Основной сайт
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+										<path fill-rule="evenodd" clip-rule="evenodd" d="M9.29289 4.29289C9.68342 3.90237 10.3166 3.90237 10.7071 4.29289L17.7071 11.2929C18.0976 11.6834 18.0976 12.3166 17.7071 12.7071L10.7071 19.7071C10.3166 20.0976 9.68342 20.0976 9.29289 19.7071C8.90237 19.3166 8.90237 18.6834 9.29289 18.2929L15.5858 12L9.29289 5.70711C8.90237 5.31658 8.90237 4.68342 9.29289 4.29289Z" fill="currentColor"/>
+									</svg>
+								</a>
+							</div>
+
+						</div>
+					</div>
+				</section>
+			</div>
+			<div class="section-anim section-anim_border">
+				<section class="section collections-section" id="collections">
+					<div class="container">
+						<div class="vacancy__heading">
+							<h2 class="vacancy__title text-56 fw-500">Подборки</h2>
+							<div class="vacancy__desc text-18 gray-text">
+								Собрал статьи по темам — удобно читать подряд.
+							</div>
+						</div>
+						<div class="collections" id="collections-list"></div>
+					</div>
+				</section>
+			</div>
+			<div class="section-anim section-anim_border">
+				<section class="section vacancy" id="articles">
+					<div class="container">
+						<div class="vacancy__wrapper">
+							<div class="vacancy__heading">
+								<h2 class="vacancy__title text-56 fw-500">Статьи</h2>
+								<div class="vacancy__desc text-18 gray-text">
+									Все заметки журнала. Новое появляется сверху.
+								</div>
+							</div>
+
+							<!--
+								НОВАЯ СТАТЬЯ:
+								1) создай папку article/<slug>/ и положи в неё index.html (шаблон: article/ARTICLE_REFERENSE/),
+								   фото — прямо в папку статьи, текст для тезиса — в text.txt (первый абзац)
+								2) добавь запись в data/posts-data.js (slug, url, title, date, tags, links)
+								Плитка с обложкой, тезисом, узел в графе и подборки появятся сами.
+								Обложка — первое фото статьи; тезис — первый абзац text.txt.
+							-->
+							<div class="tiles-controls">
+								<div class="tiles-tags" id="tiles-tags"></div>
+								<div class="tiles-sort">
+									<button type="button" class="sort-btn text-14" data-sort="desc">Сначала новые</button>
+									<button type="button" class="sort-btn text-14" data-sort="asc">Сначала ранние</button>
+								</div>
+							</div>
+							<div class="tiles" id="posts-grid"></div>
+							<div class="tiles-more">
+								<span class="tiles-counter text-14 gray-text" id="tiles-counter"></span>
+								<button type="button" id="tiles-more-btn" class="btn btn_gradient-bg text-18">Показать ещё</button>
+							</div>
+						</div>
+					</div>
+				</section>
+			</div>
+			<div class="section-anim section-anim_border">
+				<section class="section graph-section" id="graph">
+					<div class="container">
+						<div class="vacancy__heading">
+							<h2 class="vacancy__title text-56 fw-500">Граф публикаций</h2>
+							<div class="vacancy__desc text-18 gray-text">
+								Все заметки одним взглядом: узлы — статьи, связи — общие теги и ручные ссылки.
+							</div>
+						</div>
+						<div class="graph">
+							<canvas id="posts-graph" class="graph__canvas" aria-label="Граф связей публикаций"></canvas>
+							<div class="graph__tooltip" id="graph-tooltip" hidden></div>
+							<div class="graph__legend" id="graph-legend"></div>
+							<div class="graph__controls">
+								<button type="button" class="graph__control-btn" data-zoom="in" aria-label="Приблизить">+</button>
+								<button type="button" class="graph__control-btn" data-zoom="out" aria-label="Отдалить">−</button>
+								<button type="button" class="graph__control-btn" data-zoom="reset" aria-label="Сбросить масштаб">сброс</button>
+							</div>
+							<div class="graph__hint text-12 gray-text">перетащите узел · колесо мыши — масштаб · клик по узлу — статья</div>
+							<div class="graph__empty" id="graph-empty" hidden>Пока нет статей для графа.</div>
+						</div>
+					</div>
+				</section>
+			</div>
+		</main>
+		<footer class="footer-old">
+			<div class="container">
+				<div class="footer-old__wrapper">
+					<div class="footer-old__copy">Журнал «Дисковод» © Артём Толстихин @disccsz 2026</div>
+					<a href="../index.html" class="footer-old__copy">Основной сайт</a>
+				</div>
+			</div>
+		</footer>
+
+	</div>
+
+</body>
+
+</html>

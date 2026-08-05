@@ -26,6 +26,9 @@ document.addEventListener('DOMContentLoaded', function () {
 	// если GSAP/ScrollTrigger не загрузились — контент остаётся видимым, анимаций нет
 	if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
 
+	// если пользователь предпочитает минимум анимаций — скролл-анимации не запускаем
+	if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
 	// sections anim
 	let sectionsArr = document.querySelectorAll('.section-anim')
 	sectionsArr.forEach((section, index) => {
