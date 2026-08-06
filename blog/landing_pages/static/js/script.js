@@ -148,13 +148,29 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
-/* all links open in a new tab */
+/* links to other pages open in a new tab */
+function isSamePageLink(link) {
+	var href = link.getAttribute('href') || '';
+	if (/^(#|mailto:|tel:|javascript:)/.test(href)) return true;
+	try {
+		var cur = new URL(window.location.href);
+		var dest = new URL(link.href);
+		cur.hash = '';
+		dest.hash = '';
+		cur.search = '';
+		dest.search = '';
+		return cur.href === dest.href;
+	} catch (e) {
+		return false;
+	}
+}
+
 document.addEventListener('click', function (e) {
 	var link = e.target && e.target.closest ? e.target.closest('a') : null;
-	if (link && link.href && !link.target) {
-		link.target = '_blank';
-		link.rel = 'noopener';
-	}
+	if (!link || !link.href) return;
+	if (isSamePageLink(link)) return;
+	link.target = '_blank';
+	link.rel = 'noopener';
 });
 
 /* contact card tilt */

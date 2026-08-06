@@ -2236,6 +2236,79 @@ body {
 	}
 }
 
+/* ---------------------------------- custom cursor ---------------------------------- */
+
+html.has-custom-cursor,
+html.has-custom-cursor * {
+	cursor: none !important;
+}
+
+.cursor-dot,
+.cursor-ring {
+	position: fixed;
+	top: 0;
+	left: 0;
+	pointer-events: none;
+	z-index: 9999;
+	opacity: 0;
+	transition: opacity 0.3s ease;
+	will-change: transform;
+}
+
+.cursor-dot {
+	width: 0;
+	height: 0;
+}
+
+.cursor-dot::after {
+	content: "";
+	display: block;
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background: var(--accent);
+	transform: translate(-4px, -4px) scale(var(--s, 1));
+	transition: transform 0.18s ease;
+	box-shadow: 0 0 12px rgba(255, 68, 0, 0.55);
+}
+
+.cursor-dot_active {
+	--s: 0.55;
+}
+
+.cursor-ring {
+	width: 0;
+	height: 0;
+}
+
+.cursor-ring::after {
+	content: "";
+	display: block;
+	width: 36px;
+	height: 36px;
+	border: 1.5px solid rgba(255, 68, 0, 0.6);
+	border-radius: 50%;
+	transform: translate(-18px, -18px) scale(var(--s, 1));
+	transition: transform 0.22s ease, border-color 0.22s ease;
+}
+
+.cursor-ring_hover {
+	--s: 1.65;
+}
+
+.cursor-ring_hover::after {
+	border-color: rgba(255, 255, 255, 0.75);
+}
+
+@media (pointer: coarse) {
+	.cursor-dot,
+	.cursor-ring {
+		display: none;
+	}
+}
+
+/* ---------------------------------- accessibility ---------------------------------- */
+
 /* ---------------------------------- accessibility ---------------------------------- */
 
 @media (prefers-reduced-motion: reduce) {
