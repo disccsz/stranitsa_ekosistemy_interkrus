@@ -180,8 +180,10 @@ body {
 .header__wrapper {
 	padding: 23px 40px;
 	border-radius: 32px;
-	background: linear-gradient(135deg, rgba(255, 68, 0, 0.22), rgba(255, 68, 0, 0.5));
+	background: linear-gradient(135deg, rgba(255, 68, 0, 0.22), rgba(255, 68, 0, 0.1));
 	box-shadow: 0 40px 25px 0 rgba(0, 0, 0, 0.05), 0 5px 10px 0 rgba(0, 0, 0, 0.1);
+	-webkit-backdrop-filter: blur(15px);
+	backdrop-filter: blur(15px);
 	margin: 0 -60px;
 }
 
@@ -718,6 +720,34 @@ body {
 
 .vacancy__link:hover {
 	--link-bg: var(--accent);
+}
+
+.vacancy__link_featured {
+	--link-bg: #2a1406;
+	border: 1px solid rgba(255, 68, 0, 0.5);
+	background-image: radial-gradient(120% 140% at 100% 0%, rgba(255, 68, 0, 0.18) 0%, rgba(255, 68, 0, 0) 55%);
+	box-shadow: 0 0 0 1px rgba(255, 68, 0, 0.12), 0 18px 45px rgba(255, 68, 0, 0.12);
+}
+
+.vacancy__link_featured:hover {
+	--link-bg: var(--accent);
+	border-color: rgba(255, 68, 0, 0.9);
+	box-shadow: 0 0 0 1px rgba(255, 68, 0, 0.25), 0 24px 60px rgba(255, 68, 0, 0.28);
+}
+
+.vacancy__badge {
+	display: flex;
+	align-items: center;
+	width: fit-content;
+	gap: 6px;
+	border-radius: 10px;
+	padding: 4px 12px;
+	margin-bottom: 12px;
+	background: linear-gradient(135deg, #ff6b33 0.32%, #ff4400 44.6%, #ff6633 62.16%);
+	font-size: 12px;
+	font-weight: 500;
+	line-height: 140%;
+	color: var(--white);
 }
 
 .vacancy__name {

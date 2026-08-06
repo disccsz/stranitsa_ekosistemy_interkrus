@@ -114,3 +114,13 @@ document.addEventListener('DOMContentLoaded', function () {
 	})
 
 });
+
+
+/* all links open in a new tab */
+document.addEventListener('click', function (e) {
+	var link = e.target && e.target.closest ? e.target.closest('a') : null;
+	if (link && link.href && !link.target) {
+		link.target = '_blank';
+		link.rel = 'noopener';
+	}
+});
