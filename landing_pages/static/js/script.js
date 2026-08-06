@@ -113,6 +113,38 @@ document.addEventListener('DOMContentLoaded', function () {
 		})
 	})
 
+	// contacts cards anim
+	document.querySelectorAll('#contacts').forEach(wrapper => {
+		let elemsArr = wrapper.querySelectorAll('.contacts__anim')
+
+		let tl = gsap.timeline({
+			scrollTrigger: {
+				trigger: wrapper,
+				start: "top 80%",
+				end: "top 60%",
+				scrub: false,
+				markers: false,
+				pin: false,
+			}
+		});
+
+		elemsArr.forEach((elem, index) => {
+			tl.fromTo(elem, {
+				y: '24px',
+				opacity: 0,
+				ease: "back.out(1.7)",
+				duration: 0.7,
+				delay: index * 0.12,
+			}, {
+				y: 0,
+				opacity: 1,
+				ease: "back.out(1.7)",
+				duration: 0.7,
+				delay: index * 0.12,
+			}, 0);
+		})
+	})
+
 });
 
 
@@ -124,3 +156,19 @@ document.addEventListener('click', function (e) {
 		link.rel = 'noopener';
 	}
 });
+
+/* contact card tilt */
+(function () {
+	if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+	document.querySelectorAll('.contacts__qr').forEach(function (card) {
+		card.addEventListener('mousemove', function (e) {
+			var r = card.getBoundingClientRect();
+			var px = (e.clientX - r.left) / r.width - 0.5;
+			var py = (e.clientY - r.top) / r.height - 0.5;
+			card.style.transform = 'perspective(700px) rotateY(' + (px * 8).toFixed(2) + 'deg) rotateX(' + (-py * 8).toFixed(2) + 'deg) translateY(-4px)';
+		});
+		card.addEventListener('mouseleave', function () {
+			card.style.transform = '';
+		});
+	});
+})();

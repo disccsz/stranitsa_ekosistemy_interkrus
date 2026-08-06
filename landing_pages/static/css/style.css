@@ -1096,6 +1096,31 @@ body {
 
 .iframe-block {
 	padding: 80px 0;
+	position: relative;
+	overflow: hidden;
+}
+
+.contacts__glow {
+	position: absolute;
+	top: 12%;
+	left: 50%;
+	width: 860px;
+	height: 640px;
+	transform: translateX(-50%);
+	background: radial-gradient(ellipse at center, rgba(255, 68, 0, 0.16), rgba(255, 68, 0, 0.05) 45%, transparent 70%);
+	pointer-events: none;
+	animation: contacts-glow-pulse 7s ease-in-out infinite alternate;
+}
+
+@keyframes contacts-glow-pulse {
+	0% {
+		opacity: 0.55;
+		transform: translateX(-50%) scale(1);
+	}
+	100% {
+		opacity: 1;
+		transform: translateX(-50%) scale(1.12);
+	}
 }
 
 .section__title {
@@ -1116,10 +1141,14 @@ body {
 }
 
 .vk-cta {
+	position: relative;
 	margin-top: 40px;
-	padding: 48px;
-	border-radius: 24px;
-	background: var(--black-2);
+	padding: 56px 48px;
+	border-radius: 32px;
+	background:
+		radial-gradient(120% 160% at 50% 0%, rgba(255, 68, 0, 0.09), rgba(0, 0, 0, 0) 60%),
+		linear-gradient(145deg, rgba(24, 24, 24, 0.95), rgba(13, 13, 13, 0.9));
+	border: 1px solid rgba(255, 255, 255, 0.08);
 	text-align: center;
 }
 
@@ -1154,8 +1183,8 @@ body {
 .contacts__qrs {
 	display: flex;
 	justify-content: center;
-	align-items: flex-start;
-	gap: 40px;
+	align-items: stretch;
+	gap: 24px;
 	flex-wrap: wrap;
 	margin-bottom: 40px;
 }
@@ -1164,14 +1193,70 @@ body {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	gap: 12px;
+	gap: 10px;
+	padding: 20px 24px 18px;
+	border-radius: 24px;
+	background: linear-gradient(145deg, rgba(24, 24, 24, 0.95), rgba(13, 13, 13, 0.85));
+	border: 1px solid rgba(255, 255, 255, 0.1);
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+	transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+	will-change: transform;
+	cursor: pointer;
+	text-decoration: none;
+	color: var(--white);
+	position: relative;
+	overflow: hidden;
+}
+
+.contacts__qr::before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	background: radial-gradient(140% 100% at 50% 0%, rgba(255, 68, 0, 0.12), rgba(0, 0, 0, 0) 60%);
+	opacity: 0;
+	transition: opacity 0.35s ease;
+}
+
+.contacts__qr:hover {
+	border-color: rgba(255, 68, 0, 0.55);
+	box-shadow: 0 0 0 1px rgba(255, 68, 0, 0.18), 0 22px 50px rgba(255, 68, 0, 0.18), 0 10px 30px rgba(0, 0, 0, 0.35);
+	transform: translateY(-6px);
+}
+
+.contacts__qr:hover::before {
+	opacity: 1;
+}
+
+.contacts__qr-frame {
+	display: flex;
+	position: relative;
+	padding: 10px;
+	border-radius: 16px;
+	background: #fff;
+	box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
 }
 
 .contacts__qr img {
-	width: 168px;
-	height: 168px;
-	border-radius: 16px;
+	width: 132px;
+	height: 132px;
 	display: block;
+	border-radius: 8px;
+}
+
+.contacts__qr-name {
+	position: relative;
+}
+
+.contacts__qr-link {
+	position: relative;
+	color: var(--gray-1);
+	opacity: 0.8;
+	transition: opacity 0.35s ease;
+	word-break: break-all;
+}
+
+.contacts__qr:hover .contacts__qr-link {
+	opacity: 1;
 }
 
 .contacts__btns {
@@ -1185,6 +1270,83 @@ body {
 	display: inline-flex;
 	padding: 16px 32px;
 	text-decoration: none;
+}
+
+.contacts__btn::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: -150%;
+	width: 60%;
+	height: 100%;
+	background: linear-gradient(100deg, rgba(255, 255, 255, 0) 20%, rgba(255, 255, 255, 0.25) 50%, rgba(255, 255, 255, 0) 80%);
+	transform: skewX(-20deg);
+	pointer-events: none;
+}
+
+.contacts__btn:hover::before {
+	animation: shine-sweep 0.8s ease forwards;
+}
+
+@keyframes shine-sweep {
+	from {
+		left: -150%;
+	}
+	to {
+		left: 160%;
+	}
+}
+
+.btn_gh {
+	background: rgba(255, 255, 255, 0.07);
+	border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.btn_gh::after {
+	display: none;
+}
+
+.btn_gh:hover {
+	background: rgba(255, 255, 255, 0.14);
+	border-color: rgba(255, 255, 255, 0.35);
+}
+
+@media screen and (max-width: 570px) {
+	.contacts__glow {
+		width: 480px;
+		height: 480px;
+	}
+
+	.vk-cta {
+		padding: 28px 12px;
+		border-radius: 24px;
+	}
+
+	.contacts__qrs {
+		gap: 16px;
+		margin-bottom: 28px;
+	}
+
+	.contacts__qr {
+		width: 100%;
+		max-width: 340px;
+		padding: 18px 16px;
+	}
+
+	.contacts__qr img {
+		width: 150px;
+		height: 150px;
+	}
+
+	.contacts__btns {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.contacts__btn {
+		width: 100%;
+		max-width: 340px;
+	}
 }
 
 /* ---------------------------------- footer ---------------------------------- */

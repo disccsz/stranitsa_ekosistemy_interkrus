@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>probe</title>
+</head>
+<body>
+<iframe id="f" style="width:375px;height:3000px;border:0"></iframe>
+<script>
+	var out = {};
+	function report() { document.body.setAttribute('data-results', JSON.stringify(out)); }
+	try {
+		var x = new XMLHttpRequest();
+		x.open('GET', 'http://localhost:8765/index.html', false);
+		x.send();
+		out.fetchStatus = x.status;
+		var ifr = document.getElementById('f');
+		ifr.srcdoc = x.responseText.replace('<head>', '<head><base href="http://localhost:8765/">');
+		ifr.addEventListener('load', function () {
+			setTimeout(function () {
+				try {
+					var doc = ifr.contentDocument;
+					out.stage = 'got-doc';
+					var qrs = doc.querySelector('.contacts__qrs');
+					var imgs = doc.querySelectorAll('.contacts__qr img');
+					out.qrsDisplay = qrs ? getComputedStyle(qrs).display : 'none-el';
+					out.qrsW = qrs ? Math.round(qrs.getBoundingClientRect().width) : 0;
+					out.containerW = Math.round(doc.querySelector('#contacts .container').getBoundingClientRect().width);
+					out.overflowX = doc.documentElement.scrollWidth > doc.documentElement.clientWidth;
+					out.scrollW = doc.documentElement.scrollWidth;
+					out.clientW = doc.documentElement.clientWidth;
+					out.imgCount = imgs.length;
+					var info = [];
+					for (var i = 0; i < imgs.length; i++) {
+						var r = imgs[i].getBoundingClientRect();
+						info.push((imgs[i].naturalWidth || -1) + 'x' + (imgs[i].naturalHeight || -1) + '@' + Math.round(r.width) + 'x' + Math.round(r.height) + ' off=' + (imgs[i].offsetParent !== null));
+					}
+					out.imgs = info.join(' | ');
+					out.ctaW = Math.round(doc.querySelector('.vk-cta').getBoundingClientRect().width);
+				} catch (e) { out.error = String(e); }
+				report();
+			}, 3000);
+		});
+	} catch (e) { out.fatal = String(e); report(); }
+</script>
+</body>
+</html>

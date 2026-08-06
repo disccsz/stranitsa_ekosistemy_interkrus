@@ -10,11 +10,11 @@
 
 	<link rel="stylesheet" href="landing_pages/static/css/fonts.css?v=3">
 	<link rel="stylesheet" href="landing_pages/static/css/reset.css?v=3">
-	<link rel="stylesheet" href="landing_pages/static/css/style.css?v=5">
+	<link rel="stylesheet" href="landing_pages/static/css/style.css?v=6">
 
 	<script defer src="landing_pages/static/libs/gsap/gsap.min.js?v=3"></script>
 	<script defer src="landing_pages/static/libs/gsap/ScrollTrigger.min.js?v=3"></script>
-	<script defer src="landing_pages/static/js/script.js?v=4"></script>
+	<script defer src="landing_pages/static/js/script.js?v=5"></script>
 	<script defer src="blog/data/posts-data.js?v=4"></script>
 	<script defer src="landing_pages/static/js/blog-fan.js?v=4"></script>
 
@@ -256,7 +256,8 @@
 									</div>
 									<div class="vacancy__text text-18 gray-text">Модель двухступенчатой твердотопливной ракеты — с электронной системой спасения и горячим разъединением ступеней.</div>
 								</div>
-								<a href="projects/vkr-2025/index.html" class="vacancy__link">
+								<a href="projects/vkr-2025/index.html" class="vacancy__link vacancy__link_featured">
+									<div class="vacancy__badge">Особый проект</div>
 									<div class="vacancy__name text-24">VKR-2025</div>
 									<div class="vacancy__tags text-12 gray-text">
 										<div class="vacancy__tags-wrapper">
@@ -274,7 +275,8 @@
 										</svg>
 									</div>
 								</a>
-								<a href="projects/bc-69077/index.html" class="vacancy__link">
+								<a href="projects/bc-69077/index.html" class="vacancy__link vacancy__link_featured">
+									<div class="vacancy__badge">Особый проект</div>
 									<div class="vacancy__name text-24">BC-69077</div>
 									<div class="vacancy__tags text-12 gray-text">
 										<div class="vacancy__tags-wrapper">
@@ -366,23 +368,34 @@
 				</section>
 			</div>
 			<section class="section iframe-block" id="contacts">
+				<div class="contacts__glow"></div>
 				<div class="container">
-					<h2 class="section__title text-56 fw-500">Свяжитесь со мной!</h2>
-					<div class="section__subtitle text-28 gray-text">Я открыт к сотрудничеству, интересным задачам и новым знакомствам. Идея, проект или просто желание пообщаться — напишите, я отвечаю быстро.</div>
-					<div class="vk-cta">
+					<div class="section__title-holder">
+						<h2 class="section__title text-56 fw-500 contacts__anim">Свяжитесь со мной!</h2>
+						<div class="section__subtitle text-28 gray-text contacts__anim">Я открыт к сотрудничеству, интересным задачам и новым знакомствам. Идея, проект или просто желание пообщаться — напишите, я отвечаю быстро.</div>
+					</div>
+					<div class="vk-cta contacts__anim">
 						<div class="contacts__qrs">
-							<div class="contacts__qr">
-								<img src="landing_pages/static/img/qr/vk.png" alt="QR-код: страница ВКонтакте" width="528" height="528" loading="lazy" decoding="async">
-								<span class="text-18 fw-500">ВКонтакте</span>
-							</div>
-							<div class="contacts__qr">
-								<img src="landing_pages/static/img/qr/mail.png" alt="QR-код: электронная почта" width="528" height="528" loading="lazy" decoding="async">
-								<span class="text-18 fw-500">Почта</span>
-							</div>
+							<a class="contacts__qr" href="https://vk.ru/disccsz">
+								<span class="contacts__qr-frame"><img src="landing_pages/static/img/qr/vk.png" alt="QR-код: страница ВКонтакте" width="528" height="528" loading="lazy" decoding="async"></span>
+								<span class="contacts__qr-name text-18 fw-500">ВКонтакте</span>
+								<span class="contacts__qr-link text-12">vk.ru/disccsz</span>
+							</a>
+							<a class="contacts__qr" href="mailto:disccsz@mail.ru">
+								<span class="contacts__qr-frame"><img src="landing_pages/static/img/qr/mail.png" alt="QR-код: электронная почта" width="528" height="528" loading="lazy" decoding="async"></span>
+								<span class="contacts__qr-name text-18 fw-500">Почта</span>
+								<span class="contacts__qr-link text-12">disccsz@mail.ru</span>
+							</a>
+							<a class="contacts__qr" href="https://github.com/disccsz">
+								<span class="contacts__qr-frame"><img src="landing_pages/static/img/qr/github.png" alt="QR-код: профиль на GitHub" width="528" height="528" loading="lazy" decoding="async"></span>
+								<span class="contacts__qr-name text-18 fw-500">GitHub</span>
+								<span class="contacts__qr-link text-12">github.com/disccsz</span>
+							</a>
 						</div>
 						<div class="contacts__btns">
-							<a href="https://vk.ru/disccsz" class="btn btn_vk text-24 fw-500 contacts__btn">Открыть в ВК</a>
-							<a href="mailto:disccsz@mail.ru" class="btn btn_gradient-bg text-24 fw-500 contacts__btn">disccsz@mail.ru</a>
+							<a href="https://vk.ru/disccsz" class="btn btn_vk text-20 fw-500 contacts__btn">Открыть в ВК</a>
+							<a href="mailto:disccsz@mail.ru" class="btn btn_gradient-bg text-20 fw-500 contacts__btn">disccsz@mail.ru</a>
+							<a href="https://github.com/disccsz" class="btn btn_gh text-20 fw-500 contacts__btn">GitHub</a>
 						</div>
 					</div>
 				</div>
