@@ -18,20 +18,37 @@
 
 			var mx = -100, my = -100, rx = -100, ry = -100;
 			var visible = false;
+			var running = false;
+			var idleTimer = null;
+
+			function startLoop() {
+				if (running) return;
+				running = true;
+				frame();
+			}
+
+			function stopLoop() {
+				running = false;
+				visible = false;
+				dot.style.opacity = '0';
+				ring.style.opacity = '0';
+			}
 
 			document.addEventListener('mousemove', function (e) {
 				mx = e.clientX;
 				my = e.clientY;
 				if (!visible) {
 					visible = true;
-					rx = mx;
-					ry = my;
 					dot.style.opacity = '1';
 					ring.style.opacity = '1';
 				}
+				clearTimeout(idleTimer);
+				idleTimer = setTimeout(stopLoop, 1500);
+				startLoop();
 			});
 
 			function frame() {
+				if (!running) return;
 				if (visible) {
 					if (reduceMotion) {
 						rx = mx;
@@ -45,7 +62,14 @@
 				}
 				requestAnimationFrame(frame);
 			}
-			requestAnimationFrame(frame);
+
+			document.addEventListener('visibilitychange', function () {
+				if (document.hidden) {
+					stopLoop();
+				} else if (visible) {
+					startLoop();
+				}
+			});
 
 			document.addEventListener('mouseleave', function () {
 				visible = false;

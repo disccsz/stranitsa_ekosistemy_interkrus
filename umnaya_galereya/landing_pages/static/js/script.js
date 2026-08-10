@@ -26,31 +26,38 @@ document.addEventListener('DOMContentLoaded', function () {
 	// если GSAP/ScrollTrigger не загрузились — контент остаётся видимым, анимаций нет
 	if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
 
-	// sections anim
+	// sections anim — лёгкий фон-параллакс, блоки не перекрываются
+	ScrollTrigger.config({ ignoreMobileResize: true });
 	let sectionsArr = document.querySelectorAll('.section-anim')
-	sectionsArr.forEach((section, index) => {
-		if (index + 1 >= sectionsArr.length) return;
+	sectionsArr.forEach((section) => {
+		let bg = section.querySelector('.completed__bg img, .vacancy__bg img');
+		if (!bg) return;
 
-		let blockHeight = sectionsArr[index + 1].offsetHeight
-		let windowHeight = window.innerHeight
-		let resultHeight = blockHeight < windowHeight ? blockHeight : windowHeight
-		let overlap = Math.min(resultHeight / 4, 120)
+		gsap.set(bg, { scale: 1.15, transformOrigin: 'center center' });
 
 		let tl = gsap.timeline({
 			scrollTrigger: {
 				trigger: section,
-				start: "bottom 100%",
-				end: "+=" + resultHeight,
-				scrub: true,
+				start: 'top bottom',
+				end: 'bottom top',
+				scrub: 0.6,
 				markers: false,
 				pin: false,
 			}
 		});
 
-		tl.to(sectionsArr[index + 1], {
-			marginTop: -overlap,
+		tl.fromTo(bg, {
+			yPercent: -7,
+		}, {
+			yPercent: 7,
+			ease: 'none',
 		});
 	})
+
+	// пересчёт триггеров после загрузки шрифтов/картинок (они меняют высоты секций)
+	window.addEventListener('load', function () {
+		ScrollTrigger.refresh();
+	});
 
 	// completed list items anim
 	document.querySelectorAll('.completed').forEach(wrapper => {
