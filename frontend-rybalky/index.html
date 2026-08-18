@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Авто нейрострим — ваш вопрос в эфире</title>
+<meta name="description" content="Авто нейрострим — виртуальный ведущий, который 24/7 отвечает на платные вопросы зрителей. Демо-прототип.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%237c6cff'/%3E%3Cstop offset='1' stop-color='%2300e0ff'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='16' cy='16' r='14' fill='url(%23g)'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="bg" aria-hidden="true">
+  <div class="blob blob-a"></div>
+  <div class="blob blob-b"></div>
+  <div class="blob blob-c"></div>
+  <div class="blob blob-d"></div>
+  <div class="grid-lines"></div>
+</div>
+<div class="grain" aria-hidden="true"></div>
+
+<header class="nav" id="nav">
+  <div class="container nav-inner">
+    <a class="brand" href="#top">
+      <span class="brand-dot"></span>
+      <span class="brand-name">Нейрострим</span>
+      <span class="brand-tag">auto</span>
+    </a>
+    <nav class="nav-links">
+      <a href="#how">Как это работает</a>
+      <a href="#persona">Персонаж</a>
+      <a href="#ask">Задать вопрос</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <div class="nav-right">
+      <span class="load-chip" id="loadChip"><i class="dot"></i><span id="loadChipText">Нагрузка: нормальная</span></span>
+      <a class="btn btn-primary btn-sm" href="#ask">Задать вопрос</a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+<section class="hero">
+  <div class="container hero-inner">
+
+    <div class="hero-copy reveal">
+      <div class="badge">
+        <span class="badge-live"></span>
+        Демо-прототип · VK Live · Twitch · YouTube
+      </div>
+      <h1 class="h1">Ваш вопрос — <span class="grad">в эфире.</span><br>Автоматически.</h1>
+      <p class="sub">Авто нейрострим — виртуальный ведущий, который 24/7 отвечает на платные вопросы зрителей. ИИ-модерация, генерация ответа, озвучка и подбор видеофрагмента — без единого человека в цепочке.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#ask"><span>Задать вопрос</span><span class="btn-arrow">→</span></a>
+        <a class="btn btn-ghost" href="#how">Как это работает</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><b data-count="24">0</b><span>/7 в эфире</span></div>
+        <div class="stat"><b>10</b><span>эмоций ведущего</span></div>
+        <div class="stat"><b id="statWait">~40</b><span>с среднее ожидание</span></div>
+        <div class="stat"><b>99 ₽</b><span>за вопрос</span></div>
+      </div>
+    </div>
+
+    <div class="preview reveal" id="preview">
+      <div class="preview-inner">
+        <div class="pv-top">
+          <div class="pv-live"><span class="live-dot"></span>LIVE</div>
+          <span class="pv-name">Нейрострим · ответы на вопросы</span>
+          <span class="viewers"><i class="viewers-eye"></i><span id="viewers">1 204</span></span>
+        </div>
+        <div class="pv-scene">
+          <div class="aurora"></div>
+          <div class="aurora aurora-2"></div>
+          <div class="char" aria-hidden="true">
+            <div class="char-head"></div>
+            <div class="char-body"></div>
+            <div class="char-aura"></div>
+          </div>
+          <div class="shard shard-1"></div>
+          <div class="shard shard-2"></div>
+          <div class="shard shard-3"></div>
+        </div>
+        <div class="pv-caption">
+          <div class="caption-wave"><span></span><span></span><span></span><span></span><span></span></div>
+          <p class="caption-text" id="captionText">Привет эфир! Кто готов задать вопрос?</p>
+        </div>
+        <div class="pv-eta">
+          <span>Следующий вопрос</span>
+          <b id="pvCountdown">00:14</b>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="section" id="how">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div class="sec-kicker">Как это работает</div>
+      <h2 class="sec-title">Четыре шага — <span class="grad">и вы в эфире</span></h2>
+    </div>
+    <div class="steps">
+      <div class="step reveal">
+        <div class="step-num">01</div>
+        <h3>Задайте вопрос</h3>
+        <p>Напишите что угодно — соответствие правилам проверят алгоритмы, а не вы.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">02</div>
+        <h3>Оплата</h3>
+        <p>99 ₽ за вопрос. Мгновенно, без подписок — платите только за то, что спросили.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">03</div>
+        <h3>ИИ-модерация</h3>
+        <p>Критик-модель отсекает нарушения правил стримов и попытки промпт-инъекций.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">04</div>
+        <h3>Ответ в эфире</h3>
+        <p>Нейросеть формулирует ответ, озвучивает его и подбирает фрагмент с нужной эмоцией.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="persona">
+  <div class="container">
+    <div class="persona-grid">
+      <div class="persona-copy reveal">
+        <div class="sec-kicker">Персонаж</div>
+        <h2 class="sec-title">Живой —<br><span class="grad">но виртуальный</span></h2>
+        <p class="sub">Для ведущего записано 5 видео ожидания по 8 секунд и 10 видео разговора — по одному на каждую эмоцию. Когда приходит вопрос, пайплайн подбирает фрагмент, чья эмоция совпадает с тоном сгенерированного ответа.</p>
+        <ul class="persona-list">
+          <li><b>5</b> видео ожидания · 8 секунд каждое</li>
+          <li><b>10</b> видео разговора · разные эмоции</li>
+          <li><b>LLM</b> формулирует ответ в стиле ведущего</li>
+          <li><b>TTS</b> озвучивает ответ по фразам</li>
+        </ul>
+      </div>
+      <div class="emotions reveal">
+        <div class="sec-kicker">Эмоциональный каталог</div>
+        <div class="chips">
+          <div class="chip"><i class="chip-orb o1"></i>Удивление</div>
+          <div class="chip"><i class="chip-orb o2"></i>Радость</div>
+          <div class="chip"><i class="chip-orb o3"></i>Ирония</div>
+          <div class="chip"><i class="chip-orb o4"></i>Задумчивость</div>
+          <div class="chip"><i class="chip-orb o5"></i>Скепсис</div>
+          <div class="chip"><i class="chip-orb o6"></i>Восторг</div>
+          <div class="chip"><i class="chip-orb o7"></i>Серьёзность</div>
+          <div class="chip"><i class="chip-orb o8"></i>Смех</div>
+          <div class="chip"><i class="chip-orb o9"></i>Теплота</div>
+          <div class="chip"><i class="chip-orb o10"></i>Интрига</div>
+        </div>
+        <div class="emotion-hint">Эмоция фрагмента подбирается под тональность ответа автоматически.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="ask">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div class="sec-kicker">Попробуйте прямо сейчас</div>
+      <h2 class="sec-title">Задать вопрос <span class="grad">в эфир</span></h2>
+      <p class="sec-sub">Вопрос пройдёт ИИ-модерацию, затем — оплата 99 ₽. Демо полностью имитирует цикл: от очереди до показа на стриме.</p>
+    </div>
+
+    <div class="ask-grid">
+
+      <div class="ask-col reveal">
+        <div class="glass-card ask-card">
+          <form id="askForm" autocomplete="off">
+            <label class="field-label" for="qText">Ваш вопрос</label>
+            <div class="textarea-wrap">
+              <textarea id="qText" maxlength="240" rows="4" placeholder="Спросите о чём угодно — темы, которые нарушают правила стримов, отсечёт модерация..."></textarea>
+              <span class="char-count"><b id="charCount">0</b> / 240</span>
+            </div>
+            <p class="err" id="formErr"></p>
+            <button class="btn btn-primary btn-block" type="submit" id="askBtn">
+              <span>Отправить на модерацию</span>
+            </button>
+          </form>
+        </div>
+
+        <div class="sec-kicker tickets-kicker">Мои вопросы</div>
+        <div class="tickets" id="tickets">
+          <div class="empty" id="emptyState">
+            <div class="empty-orb"></div>
+            <p>Пока пусто. Задайте первый вопрос — и проследите за всем циклом: модерация, оплата, очередь, обработка, эфир.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="ask-col reveal">
+        <div class="glass-card queue-card">
+          <div class="queue-head">
+            <div>
+              <div class="sec-kicker">В прямом эфире</div>
+              <h3>Очередь эфира</h3>
+            </div>
+            <span class="load-chip big" id="loadChip2"><i class="dot"></i><span>нормальная</span></span>
+          </div>
+          <div class="queue-load">
+            <div class="queue-load-head">
+              <span>Нагрузка на пайплайн</span>
+              <b id="loadPct">42%</b>
+            </div>
+            <div class="load-bar"><div class="load-fill" id="loadFill"></div></div>
+            <p class="queue-load-note" id="loadNote">Пайплайн справляется — время ожидания минимально.</p>
+          </div>
+          <div class="queue-list" id="queueList"></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="section" id="faq">
+  <div class="container narrow">
+    <div class="sec-head reveal">
+      <div class="sec-kicker">Вопросы и ответы</div>
+      <h2 class="sec-title">Часто задаваемые</h2>
+    </div>
+    <div class="faq">
+      <div class="faq-item reveal">
+        <button class="faq-q">Это живой человек?<span class="faq-plus"></span></button>
+        <div class="faq-a"><p>Нет. Ведущий — персонаж: пре-записанные видеофрагменты, сгенерированные ответы и синтезированная озвучка. На оверлее стрима размещается маркировка ИИ-контента, как требуют платформы.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q">Сколько стоит вопрос?<span class="faq-plus"></span></button>
+        <div class="faq-a"><p>99 ₽ за вопрос. Оплата списывается только после успешного прохождения модерации — до этого деньги не блокируются.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q">Что если вопрос отклонят?<span class="faq-plus"></span></button>
+        <div class="faq-a"><p>Оплата не списывается, а если бы списалась — возврат происходит автоматически. Вопросы, нарушающие правила платформ или содержащие инъекции, отсекает ИИ-критик.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q">Как долго ждать ответ?<span class="faq-plus"></span></button>
+        <div class="faq-a"><p>Обычно 1–5 минут в зависимости от очереди и нагрузки пайплайна. Ориентировочное время показа обновляется в реальном времени и учитывает текущую загрузку.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="container foot-inner">
+    <div class="brand">
+      <span class="brand-dot"></span>
+      <span class="brand-name">Нейрострим</span>
+      <span class="brand-tag">auto</span>
+    </div>
+    <p class="foot-note">Демо-прототип. Весь цикл — вопрос, модерация, оплата, очередь и эфир — имитирован в браузере. Платёжные данные не собираются и никуда не отправляются.</p>
+    <p class="foot-copy">© 2026 Авто нейрострим</p>
+  </div>
+</footer>
+
+<script src="js/app.js"></script>
+</body>
+</html>
